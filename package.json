@@ -1,17 +1,27 @@
 {
-  "name": "Liberation War Museum",
-  "version": "0.0.1",
-  "description": "A website for Liberation War Museum",
+  "name": "liberation_war_museum",
+  "version": "1.0.0",
+  "description": "Liberation War Museum",
+  "main": "gulpfile.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "repository": {
     "type": "git",
-    "url": "https://github.com/faisal4590/Liberation-War-Museum"
+    "url": "git+https://github.com/faisal4590/Liberation-War-Museum.git"
   },
   "author": "Faisal Ibn Aziz",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/faisal4590/Liberation-War-Museum/issues"
+  },
+  "homepage": "https://github.com/faisal4590/Liberation-War-Museum#readme",
   "devDependencies": {
     "gulp": "^3.8.11",
     "gulp-jshint": "^1.9.0",
     "gulp-ruby-sass": "^1.0.5",
     "gulp-sourcemaps": "^1.5.2",
+    "gulp-watch": "^4.3.11",
     "gulp-webserver": "^0.9.1"
   }
 }

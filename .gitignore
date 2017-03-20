@@ -2,8 +2,10 @@
 node_modules
 .tmp
 .sass-cache
-images/**
+builds/source/images/**
 slides/**
-builds/styles/css/style.css
+builds/source/img/**
+builds/source/css/style.css
 .idea/
+builds/source/bootstrap/
 
