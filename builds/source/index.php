@@ -9,105 +9,141 @@ require_once('connection/connection.php');
     <title>Liberation War Museum</title>
     <link rel="stylesheet" href="css/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <style type="text/css">
-        img:hover
-        {
-            -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-        }
-    </style>
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     <script src="bootstrap/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="css/preloader.css">
+
+    <!--Linking necessary files for image hover effect-->
+    <link rel="stylesheet" type="text/css" href="css/imageHoverStyle.css"/>
+    <link rel="stylesheet" type="text/css" href="css/imageHoverStyle2.css"/>
+    <link rel="stylesheet" type="text/css" href="css/imageHoverStyleFinal.css"/>
+    <link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet' type='text/css'/>
+    <link href="https://fonts.googleapis.com/css?family=Satisfy" rel="stylesheet" type="text/css">
 </head>
 <body>
+<!-- ---------------
+				 Preloader Html-Markup
+			---------------- -->
+<div class="overlay" id="loader">
+    <div class="loader">
+        <hr/>
+        <hr/>
+        <hr/>
+        <hr/>
+    </div>
+</div>
+<!-- END -->
+
+
 <?php
 include('includes/header.php');
 ?>
 
 <section class="background jumbotron" id="jumbotron">
-    <?php include('background.php'); ?>
+    <?php include('includes/background.php'); ?>
 </section>
 
 
-<section id="employees">
-    <div class="container">
-        <h1>Employees</h1>
-        <table class="table">
-            <caption>Employee Information</caption>
-            <thead>
-            <tr>
-                <th scope="column" style="text-align: center;">Name</th>
-                <th scope="column" style="text-align: center;">Religion</th>
-                <th scope="column" style="text-align: center;">Date Of Birth</th>
-                <th scope="column" style="text-align: center;">Education Background</th>
-                <th scope="column" style="text-align: center;">Address</th>
-                <th scope="column" style="text-align: center;">Class</th>
-                <th scope="column" style="text-align: center;">Father's Name</th>
-                <th scope="column" style="text-align: center;">Mother's Name</th>
-                <th scope="column" style="text-align: center;">Working Shift</th>
-                <th scope="column" style="text-align: center;">Image</th>
-            </tr>
-            </thead>
-            <tbody>
+<div class="containerForImageHover">
+    <div id="showArea">
+        <div class="allContainer">
+            <div class="singleAreaContainer">
+                <div class="viewImageHover view-tenthImageHover">
+                    <img src="images/1.jpg"/>
+                    <div class="mask">
+                        <h2>History</h2>
+                        <span>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa dolor error mollitia odio
+                            quia temporibus velit vitae? Beatae esse, placeat. Ab aliquid aspernatur dolore eaque pariatur
+                            quae quidem quisquam voluptatum?
+                        </span>
+                    </div>
+                </div>
 
-            <tr>
-                <?php
-                $conn = oci_connect("system", "faisal4590", "localhost/faisal");
-                $stid = oci_parse($conn, 'SELECT EMPLOYEE_NAME,EMPLOYEE_RELIGION,
-                EMPLOYEE_DOB, EMPLOYEE_SSC_GPA, EMPLOYEE_ROAD_NO, 
-                EMPLOYEE_CLASS, EMPLOYEE_FATHERS_NAME,EMPLOYEE_MOTHERS_NAME,
-                EMPLOYEE_WORKING_HOUR_STARTS,EMPLOYEE_IMAGE_NAME  FROM employee');
-                oci_execute($stid);
-                $i = 0;
-                while (($row = oci_fetch_array($stid, OCI_ASSOC + OCI_RETURN_NULLS)) != false)
-                {
-                    // Use the uppercase column names for the associative array indices
+                <div>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa dolor error mollitia odio
+                        quia temporibus velit vitae? Beatae esse, placeat. Ab aliquid aspernatur dolore eaque pariatur
+                        quae quidem quisquam voluptatum?
+                    </p>
+                </div>
+            </div>
 
-                    echo '<tr>';
-                    /*foreach ($row as $item)
-                    {
-                        if($i<oci_num_rows($stid)){
-                            echo "<td style='padding: 10px;'>" . $item .
-                                "</td>\n";
-                        }
+            <div style="clear: both" class="singleAreaContainer">
+                <div class="viewImageHover view-tenthImageHover">
+                    <img src="images/2.jpg"/>
+                    <div class="mask">
+                        <h2>History</h2>
+                        <span>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa dolor error mollitia odio
+                            quia temporibus velit vitae? Beatae esse, placeat. Ab aliquid aspernatur dolore eaque pariatur
+                            quae quidem quisquam voluptatum?
+                        </span>
+                    </div>
+                </div>
 
-                    }*/
-                    echo '<th scope="row">' . $row['EMPLOYEE_NAME'] . '</th>';
-                    echo '<td scope="row">' . $row['EMPLOYEE_RELIGION'] . '</td>';
-                    echo '<td scope="row">' . $row['EMPLOYEE_DOB'] . '</td>';
-                    echo '<td scope="row">' . $row['EMPLOYEE_SSC_GPA'] . '</td>';
-                    echo '<td scope="row">' . $row['EMPLOYEE_ROAD_NO'] . '</td>';
-                    echo '<td scope="row">' . $row['EMPLOYEE_CLASS'] . '</td>';
-                    echo '<td scope="row">' . $row['EMPLOYEE_FATHERS_NAME'] . '</td>';
-                    echo '<td scope="row">' . $row['EMPLOYEE_MOTHERS_NAME'] . '</td>';
-                    echo '<td scope="row">' . $row['EMPLOYEE_WORKING_HOUR_STARTS'] . '</td>';
-                    echo '<td scope="row"> <img  style="float: left; border-radius: 50%;
-                     -webkit-transition: -webkit-transform .8s ease-in-out;
-                     transition: transform .8s ease-in-out;"
-                 height="200" width="200"
-                 src="images/'. $row['EMPLOYEE_IMAGE_NAME']  . ' " alt="Kamla 01"> ' . '</td>';
-                    echo '</tr>';
+                <div>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa dolor error mollitia odio
+                        quia temporibus velit vitae? Beatae esse, placeat. Ab aliquid aspernatur dolore eaque pariatur
+                        quae quidem quisquam voluptatum?
+                    </p>
+                </div>
+            </div>
 
-                    /*echo '<th scope="row">' . $row['EMPLOYEE_NAME'] . '</th>';
-                    echo '<td scope="row">' . $row['EMPLOYEE_RELIGION'] . '</td>';
-                    echo '<td scope="row">' . $row['EMPLOYEE_DOB'] . '</td>';
-                    echo '<td scope="row">' . $row['EMPLOYEE_SSC_GPA'] . '</td>';
-                    echo '<td scope="row">' . $row['EMPLOYEE_ROAD_NO'] . '</td>';
-                    echo '<td scope="row">' . $row['EMPLOYEE_CLASS'] . '</td>';
-                    echo '<td scope="row">' . $row['EMPLOYEE_FATHERS_NAME'] . '</td>';
-                    echo '<td scope="row">' . $row['EMPLOYEE_MOTHERS_NAME'] . '</td>';
-                    echo '<td scope="row">' . $row['EMPLOYEE_WORKING_HOUR_STARTS'] . '</td>';
-                    echo '<td scope="row">' . $row['EMPLOYEE_WORKING_HOUR_ENDS'] . '</td>';*/
-                }
 
-                oci_free_statement($stid);
-                ?>
-            </tr>
-            </tbody>
-        </table>
+            <div style="clear: both" class="singleAreaContainer">
+                <div class="viewImageHover view-tenthImageHover">
+                    <img src="images/3.jpg"/>
+                    <div class="mask">
+                        <h2>History</h2>
+                        <span>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa dolor error mollitia odio
+                            quia temporibus velit vitae? Beatae esse, placeat. Ab aliquid aspernatur dolore eaque pariatur
+                            quae quidem quisquam voluptatum?
+                        </span>
+                    </div>
+                </div>
+
+                <div>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa dolor error mollitia odio
+                        quia temporibus velit vitae? Beatae esse, placeat. Ab aliquid aspernatur dolore eaque pariatur
+                        quae quidem quisquam voluptatum?
+                    </p>
+                </div>
+            </div>
+
+
+            <div style="clear: both" class="singleAreaContainer">
+                <div class="viewImageHover view-tenthImageHover">
+                    <img src="images/4.jpg"/>
+                    <div class="mask">
+                        <h2>History</h2>
+                        <span>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa dolor error mollitia odio
+                            quia temporibus velit vitae? Beatae esse, placeat. Ab aliquid aspernatur dolore eaque pariatur
+                            quae quidem quisquam voluptatum?
+                        </span>
+                    </div>
+                </div>
+
+                <div>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa dolor error mollitia odio
+                        quia temporibus velit vitae? Beatae esse, placeat. Ab aliquid aspernatur dolore eaque pariatur
+                        quae quidem quisquam voluptatum?
+                    </p>
+                </div>
+            </div>
+
+        </div>
     </div>
-</section>
+</div>
 
 <script src="js/script.js"></script>
+
+<!-- Preloader Activation Js---->
+<script type="text/javascript" src="js/preloader.js"></script>
 </body>
 </html>
