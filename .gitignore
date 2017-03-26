@@ -8,4 +8,5 @@ builds/source/img/**
 builds/source/css/style.css
 .idea/
 builds/source/bootstrap/
+builds/source/font-awesome-4.6.3/
 

@@ -10,6 +10,7 @@ require_once('connection/connection.php');
     <link rel="stylesheet" href="css/style.css">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/animate.css">
     <script src="bootstrap/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="css/preloader.css">
 
@@ -47,9 +48,55 @@ include('includes/header.php');
 <div class="containerForImageHover">
     <div id="showArea">
         <div class="allContainer">
-            <div class="singleAreaContainer">
+            <div data-wow-delay="0.35s" class="span3 wow zoomInRight singleAreaContainer"
+                 style="visibility: visible;
+                            animation-delay: 0.35s; animation-name: zoomInRight;">
                 <div class="viewImageHover view-tenthImageHover">
-                    <img src="images/1.jpg"/>
+                    <img src="images/01300x200.jpg"/>
+                    <div class="mask">
+                        <h2>History</h2>
+                        <span>
+                            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa dolor error mollitia odio
+                            quia temporibus velit vitae? Beatae esse, placeat. Ab aliquid aspernatur dolore eaque pariatur
+                            quae quidem quisquam voluptatum?
+                        </span>
+                    </div>
+                </div>
+
+                <div>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa dolor error mollitia odio
+                        quia temporibus velit vitae? Beatae esse, placeat. Ab aliquid aspernatur dolore eaque pariatur
+                        quae quidem quisquam voluptatum?
+                    </p>
+                </div>
+                <div>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa dolor error mollitia odio
+                        quia temporibus velit vitae? Beatae esse, placeat. Ab aliquid aspernatur dolore eaque pariatur
+                        quae quidem quisquam voluptatum?
+                    </p>
+                </div>
+                <div>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa dolor error mollitia odio
+                        quia temporibus velit vitae? Beatae esse, placeat. Ab aliquid aspernatur dolore eaque pariatur
+                        quae quidem quisquam voluptatum?
+                    </p>
+                </div>
+                <div>
+                    <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Culpa dolor error mollitia odio
+                        quia temporibus velit vitae? Beatae esse, placeat. Ab aliquid aspernatur dolore eaque pariatur
+                        quae quidem quisquam voluptatum?
+                    </p>
+                </div>
+            </div>
+
+            <div data-wow-delay="0.35s" class="span3 wow rollIn singleAreaContainer" style="visibility: visible;
+            animation-delay: 0.35s; animation-name: rollIn;clear: both">
+                <div class="viewImageHover view-tenthImageHover">
+                    <img src="images/03300x200.jpg"/>
                     <div class="mask">
                         <h2>History</h2>
                         <span>
@@ -69,9 +116,11 @@ include('includes/header.php');
                 </div>
             </div>
 
-            <div style="clear: both" class="singleAreaContainer">
+
+            <div data-wow-delay="1" class="span3 wow span3 wow bounceInDown center singleAreaContainer"
+                 style="visibility: visible; animation-delay: 1s; animation-name: bounceInDown;clear: both">
                 <div class="viewImageHover view-tenthImageHover">
-                    <img src="images/2.jpg"/>
+                    <img src="images/04300x200.jpg"/>
                     <div class="mask">
                         <h2>History</h2>
                         <span>
@@ -92,9 +141,11 @@ include('includes/header.php');
             </div>
 
 
-            <div style="clear: both" class="singleAreaContainer">
+            <div data-wow-delay="0.35s" class="span3 wow zoomInRight singleAreaContainer"
+            style="visibility: visible;
+            animation-delay: 0.35s; animation-name: zoomInRight; clear: both;">
                 <div class="viewImageHover view-tenthImageHover">
-                    <img src="images/3.jpg"/>
+                    <img src="images/06300x200.jpg"/>
                     <div class="mask">
                         <h2>History</h2>
                         <span>
@@ -114,10 +165,11 @@ include('includes/header.php');
                 </div>
             </div>
 
-
-            <div style="clear: both" class="singleAreaContainer">
+            <div class="wow pulse animated singleAreaContainer" data-wow-delay="1s" data-wow-iteration="infinite"
+                 data-wow-duration="2s" style="visibility: visible; animation-duration: 2s; animation-delay: 300ms;
+                  animation-iteration-count: infinite; animation-name: pulse; clear: both;">
                 <div class="viewImageHover view-tenthImageHover">
-                    <img src="images/4.jpg"/>
+                    <img src="images/10300x200.jpg"/>
                     <div class="mask">
                         <h2>History</h2>
                         <span>
@@ -138,12 +190,24 @@ include('includes/header.php');
             </div>
 
         </div>
+
     </div>
 </div>
+
+<?php
+include "includes/footer.php";
+?>
 
 <script src="js/script.js"></script>
 
 <!-- Preloader Activation Js---->
 <script type="text/javascript" src="js/preloader.js"></script>
+
+<!--WOW js activator-->
+
+<script src="js/wow.js"></script>
+<script>
+    new WOW().init();
+</script>
 </body>
 </html>

@@ -56,7 +56,10 @@ $color-btns: (
   {
     overflow: hidden;
     .allContainer{
-
+      p{
+        font-family:"Comic Sans MS";
+        padding:5px;
+      }
       .singleAreaContainer{
 
         .viewImageHover{

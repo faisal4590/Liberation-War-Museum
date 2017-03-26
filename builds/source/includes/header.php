@@ -8,28 +8,36 @@
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     <script src="bootstrap/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="css/preloader.css">
+    <link rel="stylesheet" href="css/animate.css">
 </head>
 <body>
 <header>
     <nav>
         <div class="container">
-            <div class="branding">
+            <div class="branding wow pulse animated " data-wow-delay="1s" data-wow-iteration="infinite"
+                 data-wow-duration="2s" style="visibility: visible; animation-duration: 2s; animation-delay: 300ms;
+                  animation-iteration-count: infinite; animation-name: pulse;">
                 <h1>
                     <a href="index.php">Liberation War Museum</a>
                 </h1>
             </div>
             <ul>
-                <li><a href="developedBy.php" target="_blank">Developed By</a></li>
-                <li><a href="#jumbotron">Jumbotron</a></li>
-                <li><a href="#typography">Typography</a></li>
-                <li><a href="#buttons">Buttons</a></li>
-                <li><a href="#lists">Lists</a></li>
-                <li><a href="#media">Media</a></li>
-                <li><a href="includes/employees.php" target="_blank">Employees</a></li>
+                <li><a href="developedBy.php" target="_blank">About us</a></li>
+                <li><a href="#jumbotron">Others</a></li>
+                <li><a href="#typography">Bibliography</a></li>
+                <li><a href="#buttons">Martyrs</a></li>
+                <li><a href="#lists">Historical Battles</a></li>
+                <li><a href="#media">Gallery</a></li>
+                <li><a href="employees.php" target="_blank">Employees</a></li>
             </ul>
         </div>
     </nav>
 </header>
+
+<script src="js/wow.js"></script>
+<script>
+    new WOW().init();
+</script>
 </body>
 </head>
 </html>

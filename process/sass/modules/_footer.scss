@@ -1,0 +1,48 @@
+footer.footer-distributed
+{
+
+  background-color: darken($blue, 15%);
+  
+  .footer-left
+  {
+
+    p.footer-links
+    {
+
+      a
+      {
+        &:hover
+        {
+          color: $red;
+          -webkit-transition: 500ms ease;
+          -moz-transition: 500ms ease;
+          -o-transition: 500ms ease;
+          transition: 500ms ease;
+        }
+      }
+    }
+    p.footer-company-name{
+      font-family:Merriweather, Helvetica, sans-serif;
+    }
+  }
+
+  .footer-center{
+
+  }
+  .footer-icons{
+    a{
+      &:nth-child(2n+1){
+        &:hover{
+          background: $purple;
+        }
+      }
+      &:nth-child(2n+2){
+        &:hover{
+          background: $red;
+        }
+      }
+
+    }
+
+  }
+}

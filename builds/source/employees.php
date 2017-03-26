@@ -16,7 +16,8 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Employee</title>
-    <link rel="stylesheet" href="../css/style.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/animate.css">
     <style type="text/css">
         img:hover
         {
@@ -26,6 +27,29 @@
     </style>
 </head>
 <body>
+<header>
+    <nav>
+        <div class="container">
+            <div class="branding" data-wow-delay="1s" data-wow-iteration="infinite"
+                 data-wow-duration="2s" style="visibility: visible; animation-duration: 2s; animation-delay: 300ms;
+                  animation-iteration-count: infinite; animation-name: pulse;">
+                <h1>
+                    <a href="index.php">Liberation War Museum</a>
+                </h1>
+            </div>
+            <ul>
+                <li><a href="developedBy.php" target="_blank">About us</a></li>
+                <li><a href="#jumbotron">Others</a></li>
+                <li><a href="#typography">Bibliography</a></li>
+                <li><a href="#buttons">Martyrs</a></li>
+                <li><a href="#lists">Historical Battles</a></li>
+                <li><a href="#media">Gallery</a></li>
+                <li><a href="employees.php" target="_blank">Employees</a></li>
+            </ul>
+        </div>
+    </nav>
+</header>
+
 <section id="employees">
     <div class="container">
         <h1>Employees</h1>
@@ -82,7 +106,7 @@
                      -webkit-transition: -webkit-transform .8s ease-in-out;
                      transition: transform .8s ease-in-out;"
                  height="200" width="200"
-                 src="../images/' . $row['EMPLOYEE_IMAGE_NAME'] . ' " alt="Kamla 01"> ' . '</td>';
+                 src="images/' . $row['EMPLOYEE_IMAGE_NAME'] . ' " alt="Kamla 01"> ' . '</td>';
                     echo '</tr>';
 
                     /*echo '<th scope="row">' . $row['EMPLOYEE_NAME'] . '</th>';
@@ -104,6 +128,17 @@
         </table>
     </div>
 </section>
+
+<?php
+include "includes/footer.php";
+?>
+
+<!--WOW js activator-->
+
+<script src="js/wow.js"></script>
+<script>
+    new WOW().init();
+</script>
 
 </body>
 </html>
