@@ -130,5 +130,8 @@ include "includes/footer.php";
     new WOW().init();
 </script>
 
+
+<script src="js/jquery-1.11.3.min.js"></script>
+<script src="js/moveToTop.js"></script>
 </body>
 </html>

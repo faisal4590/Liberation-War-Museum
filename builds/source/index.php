@@ -165,9 +165,9 @@ include('includes/header.php');
                 </div>
             </div>
 
-            <div class="wow pulse animated singleAreaContainer" data-wow-delay="1s" data-wow-iteration="infinite"
-                 data-wow-duration="2s" style="visibility: visible; animation-duration: 2s; animation-delay: 300ms;
-                  animation-iteration-count: infinite; animation-name: pulse; clear: both;">
+            <div data-wow-delay="0.35s" class="span3 wow zoomInRight singleAreaContainer"
+                 style="visibility: visible;
+            animation-delay: 0.35s; animation-name: zoomInRight; clear: both;">
                 <div class="viewImageHover view-tenthImageHover">
                     <img src="images/10300x200.jpg"/>
                     <div class="mask">
@@ -209,5 +209,7 @@ include "includes/footer.php";
 <script>
     new WOW().init();
 </script>
+
+<script src="js/moveToTop.js"></script>
 </body>
 </html>

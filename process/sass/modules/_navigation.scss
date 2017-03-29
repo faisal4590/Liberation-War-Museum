@@ -4,7 +4,7 @@ nav
   {
     background-color: darken($blue, 15%);
   }
-  margin-top: -40px;
+  //margin-top: -40px;
 
   .branding
   {
@@ -16,7 +16,7 @@ nav
     }
     a
     {
-      font-family: Algerian;
+      font: normal 36px 'Cookie', cursive;
       color: #FFBA00;
       text-decoration: none;
 
@@ -29,6 +29,7 @@ nav
     overflow: hidden;
     margin-top: 5px;
     color: $yellow;
+
   }
 
   ul

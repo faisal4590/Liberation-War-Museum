@@ -27,28 +27,9 @@
     </style>
 </head>
 <body>
-<header>
-    <nav>
-        <div class="container">
-            <div class="branding" data-wow-delay="1s" data-wow-iteration="infinite"
-                 data-wow-duration="2s" style="visibility: visible; animation-duration: 2s; animation-delay: 300ms;
-                  animation-iteration-count: infinite; animation-name: pulse;">
-                <h1>
-                    <a href="index.php">Liberation War Museum</a>
-                </h1>
-            </div>
-            <ul>
-                <li><a href="developedBy.php" target="_blank">About us</a></li>
-                <li><a href="#jumbotron">Others</a></li>
-                <li><a href="#typography">Bibliography</a></li>
-                <li><a href="#buttons">Martyrs</a></li>
-                <li><a href="#lists">Historical Battles</a></li>
-                <li><a href="#media">Gallery</a></li>
-                <li><a href="employees.php" target="_blank">Employees</a></li>
-            </ul>
-        </div>
-    </nav>
-</header>
+<?php
+include "includes/header.php";
+?>
 
 <section id="employees">
     <div class="container">
@@ -82,17 +63,13 @@
                 $i = 0;
                 while (($row = oci_fetch_array($stid, OCI_ASSOC + OCI_RETURN_NULLS)) != false)
                 {
-                    // Use the uppercase column names for the associative array indices
+
+                    /*echo "<pre>";
+                    print_r($row);
+                    echo "</pre>";*/
 
                     echo '<tr>';
-                    /*foreach ($row as $item)
-                    {
-                        if($i<oci_num_rows($stid)){
-                            echo "<td style='padding: 10px;'>" . $item .
-                                "</td>\n";
-                        }
 
-                    }*/
                     echo '<th scope="row">' . $row['EMPLOYEE_NAME'] . '</th>';
                     echo '<td scope="row">' . $row['EMPLOYEE_RELIGION'] . '</td>';
                     echo '<td scope="row">' . $row['EMPLOYEE_DOB'] . '</td>';
@@ -108,17 +85,6 @@
                  height="200" width="200"
                  src="images/' . $row['EMPLOYEE_IMAGE_NAME'] . ' " alt="Kamla 01"> ' . '</td>';
                     echo '</tr>';
-
-                    /*echo '<th scope="row">' . $row['EMPLOYEE_NAME'] . '</th>';
-                    echo '<td scope="row">' . $row['EMPLOYEE_RELIGION'] . '</td>';
-                    echo '<td scope="row">' . $row['EMPLOYEE_DOB'] . '</td>';
-                    echo '<td scope="row">' . $row['EMPLOYEE_SSC_GPA'] . '</td>';
-                    echo '<td scope="row">' . $row['EMPLOYEE_ROAD_NO'] . '</td>';
-                    echo '<td scope="row">' . $row['EMPLOYEE_CLASS'] . '</td>';
-                    echo '<td scope="row">' . $row['EMPLOYEE_FATHERS_NAME'] . '</td>';
-                    echo '<td scope="row">' . $row['EMPLOYEE_MOTHERS_NAME'] . '</td>';
-                    echo '<td scope="row">' . $row['EMPLOYEE_WORKING_HOUR_STARTS'] . '</td>';
-                    echo '<td scope="row">' . $row['EMPLOYEE_WORKING_HOUR_ENDS'] . '</td>';*/
                 }
 
                 oci_free_statement($stid);
@@ -140,6 +106,8 @@ include "includes/footer.php";
     new WOW().init();
 </script>
 
+<script src="js/jquery-1.11.3.min.js"></script>
+<script src="js/moveToTop.js"></script>
 </body>
 </html>
 

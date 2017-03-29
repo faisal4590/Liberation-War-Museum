@@ -9,6 +9,7 @@
     <script src="bootstrap/js/bootstrap.min.js"></script>
     <link rel="stylesheet" href="css/preloader.css">
     <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="font-awesome-4.6.3/css/font-awesome.css">
 </head>
 <body>
 <header>
@@ -29,6 +30,7 @@
                 <li><a href="#lists">Historical Battles</a></li>
                 <li><a href="#media">Gallery</a></li>
                 <li><a href="employees.php" target="_blank">Employees</a></li>
+                <li><a href="login.php" target="_blank">Login</a></li>
             </ul>
         </div>
     </nav>
