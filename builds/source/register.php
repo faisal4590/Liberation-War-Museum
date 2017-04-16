@@ -15,6 +15,7 @@
 <head>
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="font-awesome-4.6.3/css/font-awesome.min.css">
+	<link rel="stylesheet" href="css/animate.css">
 
 </head>
 
@@ -80,7 +81,8 @@
                          To use this form template, bootstrap and font-awesome must be include in the project and the custom
                          css for form field must be loaded....
                     -->
-                    <div class="container" style="max-width: 500px; ">
+                    <div class="container wow rotateInDownLeft" data-wow-delay="0.35s" style="max-width: 500px;visibility: visible;
+                            animation-delay: 0.35s; animation-name: rotateInDownLeft; ">
                         <div class="row">
                             <div class="col-lg-12 col-md-8 col-sm-8 col-xs-8">
                                 <form action="test.php" method="post">
@@ -244,6 +246,12 @@
 </div>
 
 
+
+<!--wow js script file-->
+<script src="js/wow.js"></script>
+<script>
+    new WOW().init();
+</script>
 
 
 <!--Move to top code starts-->

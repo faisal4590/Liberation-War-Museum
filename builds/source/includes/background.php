@@ -531,7 +531,7 @@
             <img data-u="thumb" src="img/thumb-04.jpg"/>
         </div>
         <div>
-            <img data-u="image" src="img/05.jpg"/>
+            <img data-u="image" src="img/04.jpg"/>
             <img data-u="thumb" src="img/thumb-05.jpg"/>
         </div>
         <div>

@@ -30,6 +30,7 @@ include "includes/header.php";
 <?php
 
 
+
 $c1 = oci_connect("system", "faisal4590", 'localhost/faisal');
 
 if (!empty($_POST))
@@ -87,7 +88,6 @@ if (!empty($_POST))
     }
 
 
-
     else{
         $stmt = 'INSERT INTO users
         (USER_FULLNAME,USERNAME,PASSWORD,CONFIRM_PASSWORD,GENDER,
@@ -95,6 +95,7 @@ if (!empty($_POST))
         VALUES (:FUllNAME,:USERNAME,:PASSWORD,:CONFPASSWORD,:GENDER,
         :EMAIL,:MOBILE,:CITY)';
         $stid    = oci_parse($c1, $stmt);
+
 
 
 
@@ -111,7 +112,7 @@ if (!empty($_POST))
 
         oci_execute($stid);
         echo '<p class="text-center alert-success"
-        style="font-size: 20px;font-weight: bold;padding: 5px;">inserted data successfully.</p>';
+        style="font-size: 20px;font-weight: bold;padding: 5px;">You are successfully registered. <a href="login.php">click here to login.</a></p>';
 
     }
 

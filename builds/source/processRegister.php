@@ -115,6 +115,8 @@ if (!empty($_POST))
         oci_execute($stid);
 
 
+
+
         //prepare statement ends here
 
         /*$query="insert into user(u_fnm,u_unm,u_pwd,u_gender,u_email,u_contact,u_city)
@@ -128,4 +130,23 @@ else
 {
     //header("location:index.php");
 }
+$conn = oci_connect("system", "faisal4590", "localhost/faisal");
+$stid = oci_parse($conn, 'SELECT EMPLOYEE_NAME,EMPLOYEE_RELIGION,
+                EMPLOYEE_DOB, EMPLOYEE_SSC_GPA, EMPLOYEE_ROAD_NO, 
+                EMPLOYEE_CLASS, EMPLOYEE_FATHERS_NAME,EMPLOYEE_MOTHERS_NAME,
+                EMPLOYEE_WORKING_HOUR_STARTS,EMPLOYEE_IMAGE_NAME  FROM employee');
+
+
+
+oci_execute($stid);
+while (($row = oci_fetch_array($stid, OCI_ASSOC + OCI_RETURN_NULLS)) != false)
+{
+
+    $age = date('d.m.y') - $row['EMPLOYEE_DOB'] ;
+}
+
+echo "<pre>";
+print_r($age);
+echo "</pre>";
+
 ?>

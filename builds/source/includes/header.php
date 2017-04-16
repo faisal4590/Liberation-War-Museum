@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="css/preloader.css">
     <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="font-awesome-4.6.3/css/font-awesome.css">
+    <link href="http://fonts.googleapis.com/css?family=Cookie" rel="stylesheet" type="text/css">
 </head>
 <body>
 <header>
@@ -19,7 +20,9 @@
                  data-wow-duration="2s" style="visibility: visible; animation-duration: 2s; animation-delay: 300ms;
                   animation-iteration-count: infinite; animation-name: pulse;">
                 <h1>
-                    <a href="index.php">Liberation War Museum</a>
+                    <a href="index.php">
+                    <span style="color:#5aff4d;">Liberation</span>
+                    <span style="color: #ff2e46;">War Museum</span></a>
                 </h1>
             </div>
             <ul>

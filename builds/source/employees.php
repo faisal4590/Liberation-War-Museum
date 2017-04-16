@@ -18,6 +18,7 @@
     <title>Employee</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     <style type="text/css">
         img:hover
         {
@@ -31,11 +32,11 @@
 include "includes/header.php";
 ?>
 
-<section id="employees">
+<section id="employees" style="font-family: comic sans ms, Merriweather, Helvetica, sans-serif">
     <div class="container">
-        <h1>Employees</h1>
+        <h1 class="text-center">Employees</h1>
         <table class="table">
-            <caption>Employee Information</caption>
+            <caption class="text-center" style="text-align: center;">Employee Information</caption>
             <thead>
             <tr>
                 <th scope="column" style="text-align: center;">Name</th>
@@ -46,6 +47,7 @@ include "includes/header.php";
                 <th scope="column" style="text-align: center;">Class</th>
                 <th scope="column" style="text-align: center;">Father's Name</th>
                 <th scope="column" style="text-align: center;">Mother's Name</th>
+                <th scope="column" style="text-align: center;">Age</th>
                 <th scope="column" style="text-align: center;">Working Shift</th>
                 <th scope="column" style="text-align: center;">Image</th>
             </tr>
@@ -63,8 +65,11 @@ include "includes/header.php";
                 $i = 0;
                 while (($row = oci_fetch_array($stid, OCI_ASSOC + OCI_RETURN_NULLS)) != false)
                 {
-
-                    /*echo "<pre>";
+                    //Calculating Employee Age
+                    $date = new DateTime($row['EMPLOYEE_DOB']);
+                    $now = new DateTime();
+                    $interval = $now->diff($date)->y;
+                    /*echo "<pre>";n
                     print_r($row);
                     echo "</pre>";*/
 
@@ -78,6 +83,7 @@ include "includes/header.php";
                     echo '<td scope="row">' . $row['EMPLOYEE_CLASS'] . '</td>';
                     echo '<td scope="row">' . $row['EMPLOYEE_FATHERS_NAME'] . '</td>';
                     echo '<td scope="row">' . $row['EMPLOYEE_MOTHERS_NAME'] . '</td>';
+                    echo '<td scope="row">' . $interval . '</td>';
                     echo '<td scope="row">' . $row['EMPLOYEE_WORKING_HOUR_STARTS'] . '</td>';
                     echo '<td scope="row"> <img  style="float: left; border-radius: 50%;
                      -webkit-transition: -webkit-transform .8s ease-in-out;

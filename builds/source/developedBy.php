@@ -24,6 +24,7 @@
     <link href='http://fonts.googleapis.com/css?family=Open+Sans+Condensed:700,300,300italic' rel='stylesheet'
           type='text/css'/>
     <script type="text/javascript" src="js/modernizr.custom.69142.js"></script>
+    <link rel="stylesheet" href="lightbox2/src/css/lightbox.css">
 </head>
 <body>
 
@@ -53,7 +54,8 @@ include "includes/header.php";
                 <span>cse'15</span>
                 <a href="https://github.com/faisal4590" style="text-decoration: none;">&rarr;</a>
             </div>
-            <img src="images/faisal.jpg"/>
+            <a href="images/mine1.jpg" rel="lightbox">cl</a>
+            <img src="images/mine1.jpg"/>
 
         </div>
         <div class="view span3 wow rollIn" data-wow-delay="0.35s"
@@ -64,7 +66,7 @@ include "includes/header.php";
                 <span>cse'15</span>
                 <a href="https://www.facebook.com/moin.arty" style="text-decoration: none;">&rarr;</a>
             </div>
-            <img src="images/moin.jpg"/>
+            <img src="images/moinNew11.jpg"/>
         </div>
 
         <div class="view span3 wow bounceInDown" data-wow-delay="0.35s"
@@ -75,7 +77,7 @@ include "includes/header.php";
                 <span>cse'15</span>
                 <a href="#" style="text-decoration: none;">&rarr;</a>
             </div>
-            <img src="images/diya%20funny.jpg"/>
+            <img src="images/diya-new-1.jpg"/>
         </div>
         <div class="view span3 wow rotateInDownLeft" data-wow-delay="0.35s"
              style="visibility: visible;
@@ -85,7 +87,7 @@ include "includes/header.php";
                 <span>cse'15</span>
                 <a href="https://www.facebook.com/profile.php?id=100011006403442" style="text-decoration: none;">&rarr;</a>
             </div>
-            <img src="images/abid-funny.jpg"/>
+            <img src="images/abid-new1.jpg"/>
         </div>
         <div class="view span3 wow fadeInRightBig" data-wow-delay="0.35s"
              style="visibility: visible;
@@ -95,7 +97,7 @@ include "includes/header.php";
                 <span>cse'15</span>
                 <a href="https://www.facebook.com/nitu.rawnak" style="text-decoration: none;">&rarr;</a>
             </div>
-            <img src="images/nitu%20funny.jpg"/>
+            <img src="images/nitu-new1.jpg"/>
         </div>
     </div>
 </div>
@@ -133,5 +135,6 @@ include "includes/footer.php";
 
 <script src="js/jquery-1.11.3.min.js"></script>
 <script src="js/moveToTop.js"></script>
+<script src="lightbox2/src/js/lightbox.js"></script>
 </body>
 </html>

@@ -8,13 +8,15 @@
     <title>Document</title>
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="font-awesome-4.6.3/css/font-awesome.css">
+	<link rel="stylesheet" href="css/animate.css">
 </head>
 <body>
 <?php
 include "includes/header.php";
 ?>
 
-<div class="container">
+<div class="container wow fadeInLeftBig" data-wow-delay="0.35s" style="visibility: visible;
+                            animation-delay: 0.35s; animation-name: fadeInLeftBig; ">
     <div id="loginbox" style="margin-top:50px;" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
         <div class="panel panel-info">
             <div class="panel-heading">
@@ -161,6 +163,16 @@ include "includes/header.php";
 <?php
 include "includes/footer.php";
 ?>
+
+
+<!--wow js script file-->
+<script src="js/wow.js"></script>
+<script>
+    new WOW().init();
+</script>
+
+
+
 <script src="js/moveToTop.js"></script>
 
 </body>

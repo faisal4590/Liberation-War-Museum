@@ -9,4 +9,6 @@ builds/source/css/style.css
 .idea/
 builds/source/bootstrap/
 builds/source/font-awesome-4.6.3/
+builds/source/admin/bootstrap/
+builds/source/admin/font-awesome-4.6.3/
 
