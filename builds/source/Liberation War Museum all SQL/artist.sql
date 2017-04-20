@@ -10,3 +10,24 @@ date_of_retrieval date,
 constraint artist_artist_id_pk primary key (artist_id)
 
 );
+
+
+/*
+
+/////// Artist View ///////////
+
+CREATE OR REPLACE VIEW artist_view
+("Artist ID","Art Place", "Date Of Death","Worth Value",
+    "Date Of Retrieval") AS
+  SELECT ARTIST_ID,ART_PLACE,date_of_death,
+    worth_value,date_of_retrieval FROM ARTIST
+  WHERE DATE_OF_DEATH > to_date(current_date,'DD-MON-YYYY')
+  WITH CHECK OPTION CONSTRAINT artist_death_check;
+
+  
+ -----------sample query with view ---------
+ 
+ select "Artist ID","Art Place" from artist_view;
+ 
+ 
+*/

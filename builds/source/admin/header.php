@@ -51,11 +51,11 @@
                                 <li class="divider"></li>
                                 <li><a href="addArtists.php" target="_blank">Add Artists</a></li>
                                 <li class="divider"></li>
-                                <li><a href="#">Something else here</a></li>
+                                <li><a href="addWeapon.php">Add Weapons</a></li>
                                 <li class="divider"></li>
-                                <li><a href="#">Add Freedom Fighters</a></li>
+                                <li><a href="addFreedomFighters.php" target="_blank">Add Freedom Fighters</a></li>
                                 <li class="divider"></li>
-                                <li><a href="#">Add bla bla bla</a></li>
+                                <li><a href="addArtifacts.php">Add Artifacts</a></li>
                                 <li class="divider"></li>
                             </ul>
                         </li>

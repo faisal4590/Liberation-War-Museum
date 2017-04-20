@@ -1,7 +1,7 @@
 create table gallery
 (
 
-gallery_no number GENERATED ALWAYS AS IDENTITY (START WITH 101 INCREMENT BY 1) NOT NULL ,
+gallery_no number GENERATED ALWAYS AS IDENTITY (START WITH 101 INCREMENT BY 1),
 gallery_name varchar(155),
 date_of_establishment date,
 inagurated_by varchar(155),

@@ -100,22 +100,19 @@ if (!empty($_POST))
 
     }
 
-    move_uploaded_file($_FILES['employeeImage']['tmp_name'], "images/" . $_FILES['employeeImage']['name']);
+    move_uploaded_file($_FILES['employeeImage']['tmp_name'], "images/employee_images/" . $_FILES['employeeImage']['name']);
 
     $empImage =  $_FILES['employeeImage']['name'];
-
-    var_dump($empImage);
 
     $stmt = "INSERT INTO EMPLOYEE
         (EMPLOYEE_NAME,EMPLOYEE_RELIGION,EMPLOYEE_DOB,EMPLOYEE_SSC_GPA,EMPLOYEE_HSC_GPA,
         EMPLOYEE_GRADUATE_CGPA,EMPLOYEE_POST_GRADUATE_CGPA,EMPLOYEE_ROAD_NO,EMPLOYEE_HOUSE_NO,
         EMPLOYEE_FLAT_NO,EMPLOYEE_ZIP_CODE,EMPLOYEE_DISTRICT,EMPLOYEE_POST_CODE,EMPLOYEE_CLASS,
         EMPLOYEE_FATHERS_NAME,EMPLOYEE_MOTHERS_NAME,EMPOLYEE_FINGERPRINT_ID,
-        EMPLOYEE_WORKING_HOUR_STARTS,EMPLOYEE_WORKING_HOUR_ENDS,EMPLOYEE_IMAGE_NAME) 
+        EMPLOYEE_IMAGE_NAME) 
         VALUES( :E_NAME,:E_RELIGION,TO_DATE('" . $empDOB . "','MM/DD/YYYY'),:E_SSC,:E_HSC,
         :E_GRADUATE,:E_POST_GRADUATE,:E_ROAD,:E_HOUSE,:E_FLAT,:E_ZIP,:E_DISTRICT,:E_POSTCODE,
-        :E_CLASS,:E_FATHER,:E_MOTHER,:E_FINGER,TO_TIMESTAMP($empWorkingHourStarts, 'YYYY-MM-DD HH:MM:SS'),
-        TO_TIMESTAMP($empWorkingHourEnds, 'YYYY-MM-DD HH:MM:SS'),:E_IMAGE)";
+        :E_CLASS,:E_FATHER,:E_MOTHER,:E_FINGER,:E_IMAGE)";
     $stid = oci_parse($c1, $stmt);
 
 
@@ -136,14 +133,13 @@ if (!empty($_POST))
     oci_bind_by_name($stid, ':E_FATHER', $empFatherName);
     oci_bind_by_name($stid, ':E_MOTHER', $empMotherName);
     oci_bind_by_name($stid, ':E_FINGER', $empFingerPrintID);
-    //oci_bind_by_name($stid, ':E_WORKINGSTARTS', $empWorkingHourStarts);
-    //oci_bind_by_name($stid, ':E_WORKINGENDS', $empWorkingHourEnds);
     oci_bind_by_name($stid, ':E_IMAGE', $empImage);
 
 
     oci_execute($stid);
     echo '<p class="text-center alert-success"
-        style="font-size: 20px;font-weight: bold;padding: 5px;">You are successfully registered. <a href="login.php">click here to login.</a></p>';
+        style="font-size: 20px;font-weight: bold;padding: 5px;">Data Successfully Inserted.
+           <a href="index.php">click here to go back.</a></p>';
 
 }
 

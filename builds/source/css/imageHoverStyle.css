@@ -22,14 +22,14 @@ a{
     margin: 0 auto;
 }
 
-h1 span{
+/*h1 span{
     display:block;
     font-size: 14px;
     font-family: Georgia, serif;
     font-style: italic;
     color:#b2891b;
     padding-top:10px;
-}
+}*/
 /* Header Style */
 .header{
     font-family:'Arial Narrow', Arial, sans-serif;

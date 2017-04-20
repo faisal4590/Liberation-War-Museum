@@ -278,7 +278,7 @@ include "header.php";
                                             <div class="icon-addon">
                                                 <input class="form-control"
                                                        placeholder="employee working hour starts"
-                                                       type='time' required name='employeeWorkingHourStarts'
+                                                       type='datetime-local' required name='employeeWorkingHourStarts'
                                                        size="30">
                                             </div>
                                         </div>
@@ -291,7 +291,7 @@ include "header.php";
                                             <div class="icon-addon">
                                                 <input class="form-control"
                                                        placeholder="employee working hour ends"
-                                                       type='time' required name='employeeWorkingHourEnds'
+                                                       type='datetime-local' required name='employeeWorkingHourEnds'
                                                        size="30">
                                             </div>
                                         </div>

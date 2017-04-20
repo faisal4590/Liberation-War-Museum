@@ -48,7 +48,6 @@ include "includes/header.php";
                 <th scope="column" style="text-align: center;">Father's Name</th>
                 <th scope="column" style="text-align: center;">Mother's Name</th>
                 <th scope="column" style="text-align: center;">Age</th>
-                <th scope="column" style="text-align: center;">Working Shift</th>
                 <th scope="column" style="text-align: center;">Image</th>
             </tr>
             </thead>
@@ -84,12 +83,11 @@ include "includes/header.php";
                     echo '<td scope="row">' . $row['EMPLOYEE_FATHERS_NAME'] . '</td>';
                     echo '<td scope="row">' . $row['EMPLOYEE_MOTHERS_NAME'] . '</td>';
                     echo '<td scope="row">' . $interval . '</td>';
-                    echo '<td scope="row">' . $row['EMPLOYEE_WORKING_HOUR_STARTS'] . '</td>';
                     echo '<td scope="row"> <img  style="float: left; border-radius: 50%;
                      -webkit-transition: -webkit-transform .8s ease-in-out;
                      transition: transform .8s ease-in-out;"
                  height="200" width="200"
-                 src="images/' . $row['EMPLOYEE_IMAGE_NAME'] . ' " alt="Kamla 01"> ' . '</td>';
+                 src="admin/images/employee_images/' . $row['EMPLOYEE_IMAGE_NAME'] . ' " alt="Kamla 01"> ' . '</td>';
                     echo '</tr>';
                 }
 
