@@ -73,8 +73,8 @@ include "header.php";
                                             <span class="input-group-addon"> <i
                                                     class="glyphicon glyphicon-user"></i></span>
                                         <div class="icon-addon">
-                                            <input class="form-control" placeholder="weapon capacity"
-                                                   type='number' name='weaponCapacity'>
+                                            <input class="form-control" placeholder="artifact name"
+                                                   type='text' name='artifactName'>
                                         </div>
                                     </div>
                                 </div>
@@ -86,8 +86,8 @@ include "header.php";
                                                     class="fa fa-dollar"></i></span>
                                         <div class="icon-addon">
                                             <input class="form-control"
-                                                   placeholder="weapon cost" required type='number'
-                                                   name='weaponCost'>
+                                                   placeholder="artifact category" required type='text'
+                                                   name='artifactCategory'>
                                         </div>
                                     </div>
                                 </div>
@@ -97,20 +97,8 @@ include "header.php";
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="fa fa-eyedropper"></i></span>
                                         <div class="icon-addon">
-                                            <input class="form-control" placeholder="weapon model"
-                                                   type='text' required name='weaponModel'>
-                                        </div>
-                                    </div>
-                                </div>
-
-                                <div class="form-group">
-                                    <label for="repeatPassword">Time Duration Of The Artifact : </label>
-                                    <div class="input-group">
-                                        <span class="input-group-addon"><i class="fa fa-weixin"></i></span>
-                                        <div class="icon-addon">
-                                            <input class="form-control"
-                                                   placeholder="weapon weight"
-                                                   type='number' name='weaponWeight'>
+                                            <input class="form-control" placeholder="artifact date of retrieval"
+                                                   type='date' required name='artifactDateOfRetrieval'>
                                         </div>
                                     </div>
                                 </div>
@@ -118,7 +106,7 @@ include "header.php";
 
                                 <div class="form-group">
                                     <label style="font-size: 18px;" for="bookImage">Upload Artifact Image</label><br>
-                                    <input type='file' name='weaponImage'>
+                                    <input type='file' name='artifactImage'>
                                 </div>
 
                                 <div class="form-group">

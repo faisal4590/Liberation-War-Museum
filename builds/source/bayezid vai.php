@@ -9,44 +9,15 @@
 
 </head>
 <body>
-<table>
-    <tr>
-        <th>Department Name</th>
-        <th>Department ID</th>
-        <th>Capacity</th>
-        <th>Start Date</th>
-        <th>Building No</th>
-        <th>Floor No</th>
-        <th>Room No</th>
-    </tr>
 
-    <tr>
-        <?php
-        $conn = oci_connect("system", "faisal4590", "localhost/faisal");
-        $stid = oci_parse($conn, 'SELECT *   FROM DEPARTMENT');
-        oci_execute($stid);
-        $i = 0;
-        while (($row = oci_fetch_array($stid, OCI_ASSOC + OCI_RETURN_NULLS)) != false)
-        {
-            //Calculating Employee Age
+<form action="posting.php" method="post" enctype="multipart/form-data">
+    <p>Name : </p>
+    <input type="text" name="asd"><br>
+    <button name="test">Click</button>
+</form>
 
-            echo '<tr>';
 
-            echo '<th scope="row">' . $row['DEPARTMENT_NAME'] . '</th>';
-            echo '<td scope="row">' . $row['DEPARTMENT_ID'] . '</td>';
-            echo '<td scope="row">' . $row['CAPACITY'] . '</td>';
-            echo '<td scope="row">' . $row['START_DATE'] . '</td>';
-            echo '<td scope="row">' . $row['BUILDING_NO'] . '</td>';
-            echo '<td scope="row">' . $row['FLOOR_NO'] . '</td>';
-            echo '<td scope="row">' . $row['ROOM_NO'] . '</td>';
-            echo '</tr>';
 
-        }
-
-        oci_free_statement($stid);
-        ?>
-    </tr>
-</table>
 
 </body>
 </html>

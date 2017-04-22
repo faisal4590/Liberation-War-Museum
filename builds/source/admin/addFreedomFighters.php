@@ -66,70 +66,215 @@ include "header.php";
                             animation-delay: 0.35s; animation-name: rotateInDownLeft; ">
                     <div class="row">
                         <div class="col-lg-12 col-md-8 col-sm-8 col-xs-8">
-                            <form action="processAddWeapon.php" method="post" enctype="multipart/form-data">
+                            <form action="processAddFreedomFighters.php" method="post" enctype="multipart/form-data">
                                 <div class="form-group">
-                                    <label for="fullname">Weapon Capacity : </label>
+                                    <label for="fullname">Freedom Fighter Name : </label>
                                     <div class="input-group">
                                             <span class="input-group-addon"> <i
                                                     class="glyphicon glyphicon-user"></i></span>
                                         <div class="icon-addon">
-                                            <input class="form-control" placeholder="weapon capacity"
-                                                   type='number' name='weaponCapacity'>
+                                            <input class="form-control" placeholder="freedom fighter name"
+                                                   type='text' name='freedomFighterName'>
                                         </div>
                                     </div>
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="username">Weapon Cost : </label>
+                                    <label for="username">Freedom Fighter gender : </label>
                                     <div class="input-group">
                                             <span class="input-group-addon"><i
                                                     class="fa fa-dollar"></i></span>
                                         <div class="icon-addon">
                                             <input class="form-control"
-                                                   placeholder="weapon cost" required type='number'
-                                                   name='weaponCost'>
+                                                   placeholder="gender" required type='text'
+                                                   name='gender'>
                                         </div>
                                     </div>
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="password">Weapon Model : </label>
+                                    <label for="password">Date Of Birth : </label>
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="fa fa-eyedropper"></i></span>
                                         <div class="icon-addon">
-                                            <input class="form-control" placeholder="weapon model"
-                                                   type='text' required name='weaponModel'>
+                                            <input class="form-control" placeholder="date of birth"
+                                                   type='date' required name='dateOfBirth'>
                                         </div>
                                     </div>
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="repeatPassword">Weapon Weight : </label>
+                                    <label for="repeatPassword">Date Of Martyrdom : </label>
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="fa fa-weixin"></i></span>
                                         <div class="icon-addon">
                                             <input class="form-control"
-                                                   placeholder="weapon weight"
-                                                   type='number' name='weaponWeight'>
+                                                   placeholder="date of martyrdom"
+                                                   type='date' name='dateOfMartyrdom'>
                                         </div>
                                     </div>
                                 </div>
 
                                 <div class="form-group">
-                                    <label for="repeatPassword">Weapon Manufacturer : </label>
+                                    <label for="repeatPassword">Country : </label>
                                     <div class="input-group">
                                         <span class="input-group-addon"><i class="fa fa-compress"></i></span>
                                         <div class="icon-addon">
                                             <input class="form-control"
-                                                   placeholder="weapon manufacturer"
-                                                   type='text' name='weaponManufacturer'>
+                                                   placeholder="country"
+                                                   type='text' name='country'>
                                         </div>
                                     </div>
                                 </div>
 
                                 <div class="form-group">
-                                    <label style="font-size: 18px;" for="bookImage">Upload Weapon Image</label><br>
-                                    <input type='file' name='weaponImage'>
+                                    <label for="password">Fathers Name : </label>
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-eyedropper"></i></span>
+                                        <div class="icon-addon">
+                                            <input class="form-control" placeholder="father name"
+                                                   type='text' required name='fatherName'>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="repeatPassword">Mother Name : </label>
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-weixin"></i></span>
+                                        <div class="icon-addon">
+                                            <input class="form-control"
+                                                   placeholder="mother name"
+                                                   type='text' name='motherName'>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="repeatPassword">Freedom Fighter Type : </label>
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-compress"></i></span>
+                                        <div class="icon-addon">
+                                            <input class="form-control"
+                                                   placeholder="freedom fighter type"
+                                                   type='text' name='freedomFighterType'>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label for="username">Gallantry award type : </label>
+                                    <div class="input-group">
+                                            <span class="input-group-addon"><i
+                                                        class="fa fa-dollar"></i></span>
+                                        <div class="icon-addon">
+                                            <input class="form-control"
+                                                   placeholder="gallantry award type"
+                                                   required type='text'
+                                                   name='gallantryAwardType'>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="password">Gallantry Received date :: </label>
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-eyedropper"></i></span>
+                                        <div class="icon-addon">
+                                            <input class="form-control" placeholder="gallantry received date"
+                                                   type='date' required name='gallantryReceivedDate'>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="repeatPassword">Road no : </label>
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-weixin"></i></span>
+                                        <div class="icon-addon">
+                                            <input class="form-control"
+                                                   placeholder="road no"
+                                                   type='text' name='roadNo'>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="repeatPassword">House no : </label>
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-compress"></i></span>
+                                        <div class="icon-addon">
+                                            <input class="form-control"
+                                                   placeholder="house no"
+                                                   type='text' name='houseNo'>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="password">house name : </label>
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-eyedropper"></i></span>
+                                        <div class="icon-addon">
+                                            <input class="form-control" placeholder="house name"
+                                                   type='text' required name='houseName'>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="repeatPassword">flat no : </label>
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-weixin"></i></span>
+                                        <div class="icon-addon">
+                                            <input class="form-control"
+                                                   placeholder="flat no"
+                                                   type='text' name='flatNo'>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="repeatPassword">Zip code : </label>
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-compress"></i></span>
+                                        <div class="icon-addon">
+                                            <input class="form-control"
+                                                   placeholder="zip code"
+                                                   type='text' name='zipCode'>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="repeatPassword">district : </label>
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-weixin"></i></span>
+                                        <div class="icon-addon">
+                                            <input class="form-control"
+                                                   placeholder="district"
+                                                   type='text' name='district'>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="repeatPassword">Post code : </label>
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="fa fa-compress"></i></span>
+                                        <div class="icon-addon">
+                                            <input class="form-control"
+                                                   placeholder="post code"
+                                                   type='text' name='postCode'>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <div class="form-group">
+                                    <label style="font-size: 18px;" for="bookImage">Upload Freedom Fighter Image</label><br>
+                                    <input type='file' name='freedomFighterImage'>
                                 </div>
 
                                 <div class="form-group">

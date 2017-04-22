@@ -37,52 +37,50 @@ if (!empty($_POST))
         $msg .= '<p>Please fill up all the data</p>';
     }
 
-    $weapon_capacity           = htmlspecialchars($_POST['weaponCapacity']);
-    $weapon_cost  = htmlspecialchars($_POST['weaponCost']);
-    $weapon_model            = htmlspecialchars($_POST['weaponModel']);
-    $weapon_weight           = htmlspecialchars($_POST['weaponWeight']);
-    $weapon_manufacturer = htmlspecialchars($_POST['weaponManufacturer']);
+    $artifactName           = htmlspecialchars($_POST['artifactName']);
+    $artifactCategory               =htmlspecialchars($_POST['artifactCategory']);
+    $artifactDateOfRetrieval        = htmlspecialchars(date('m.d.y', strtotime($_POST['artifactDateOfRetrieval'])));
 
 
-    if (empty($_FILES['weaponImage']['name']))
+    if (empty($_FILES['artifactImage']['name']))
     {
         $msg .= '<p style="color:red;font-size: 23px; font-weight: bold;">Please add a image...</p>';
     }
 
 
-    if ($_FILES['weaponImage']['error'] > 0)
+    if ($_FILES['artifactImage']['error'] > 0)
     {
         $msg .= '<p style="color:red;font-size: 23px; font-weight: bold;">Error uploading image(Image size maybe too large).</p>';
     }
 
 
-    if (!(strtoupper(substr($_FILES['weaponImage']['name'], -4)) == ".JPG"
-        || strtoupper(substr($_FILES['weaponImage']['name'], -5)) == ".JPEG"
-        || strtoupper(substr($_FILES['weaponImage']['name'], -4)) == ".GIF"
-        || strtoupper(substr($_FILES['weaponImage']['name'], -4)) == ".PNG")
+    if (!(strtoupper(substr($_FILES['artifactImage']['name'], -4)) == ".JPG"
+        || strtoupper(substr($_FILES['artifactImage']['name'], -5)) == ".JPEG"
+        || strtoupper(substr($_FILES['artifactImage']['name'], -4)) == ".GIF"
+        || strtoupper(substr($_FILES['artifactImage']['name'], -4)) == ".PNG")
     )
     {
         $msg .= '<p style="color:red;font-size: 23px; font-weight: bold;">wrong image file  type(supported formats are .jpg, .jpeg, .gif, .png)</p>';
 
     }
 
-    move_uploaded_file($_FILES['weaponImage']['tmp_name'], "images/weapon_images/" . $_FILES['weaponImage']['name']);
+    move_uploaded_file($_FILES['artifactImage']['tmp_name'], "images/Artifacts_images/" .
+        $_FILES['artifactImage']['name']);
 
-    $weapon_image = $_FILES['weaponImage']['name'];
+    $artifactImage = $_FILES['artifactImage']['name'];
 
 
 
-    $stmt = "INSERT INTO WEAPON(WEAPON_CAPACITY,WEAPON_COST,WEAPON_MODEL,WEAPON_WEIGHT,WEAPON_MANUFACTURER)
-        VALUES(:weapon_capacity,:weapon_cost,
-        :weapon_model,:weapon_weight,:weapon_manufacturer)";
+    $stmt = "INSERT INTO ARTIFACTS
+        (ARTIFACT_NAME,ARTIFACT_CATEGORY,ARTIFACT_DATE_OF_RETRIEVAL)
+        VALUES(:ARTIFACT_NAME,:ARTIFACT_CATEGORY,
+        TO_DATE('" . $artifactDateOfRetrieval . "','MM/DD/YYYY'))";
 
     $stid = oci_parse($c1, $stmt);
 
-    oci_bind_by_name($stid, ':weapon_capacity', $weapon_capacity);
-    oci_bind_by_name($stid, ':weapon_cost', $weapon_cost);
-    oci_bind_by_name($stid, ':weapon_model', $weapon_model);
-    oci_bind_by_name($stid, ':weapon_weight', $weapon_weight);
-    oci_bind_by_name($stid, ':weapon_manufacturer', $weapon_manufacturer);
+    oci_bind_by_name($stid, ':ARTIFACT_NAME', $artifactName);
+    oci_bind_by_name($stid, ':ARTIFACT_CATEGORY', $artifactCategory);
+
 
 
     oci_execute($stid);
@@ -93,7 +91,7 @@ if (!empty($_POST))
 
     $stid = oci_parse($c1, $stmt);
 
-    oci_bind_by_name($stid, ':image_name', $weapon_image);
+    oci_bind_by_name($stid, ':image_name', $artifactImage);
 
     oci_execute($stid);
 

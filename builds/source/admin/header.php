@@ -40,8 +40,8 @@
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
-                <div class="collapse navbar-collapse menu" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav">
+                <div  class="collapse navbar-collapse menu" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav" >
                         <li class="active"><a href="index.php">Home</a></li>
 
                         <li class="dropdown">
@@ -55,12 +55,82 @@
                                 <li class="divider"></li>
                                 <li><a href="addFreedomFighters.php" target="_blank">Add Freedom Fighters</a></li>
                                 <li class="divider"></li>
-                                <li><a href="addArtifacts.php">Add Artifacts</a></li>
+                                <li><a href="addArts.php" target="_blank">Add Arts</a></li>
+                                <li class="divider"></li>
+                                <li><a href="addPaintings.php" target="_blank">Add Paintings</a></li>
+                                <li class="divider"></li>
+                                <li><a href="addSculpture.php" target="_blank">Add Sculpture</a></li>
+                                <li class="divider"></li>
+                                <li><a href="addArtifacts.php" target="_blank">Add Artifacts</a></li>
+                                <li class="divider"></li>
+                                <li><a href="addWarCriminals.php" target="_blank">Add War Criminals</a></li>
+                                <li class="divider"></li>
+                                <li><a href="addVisitors.php" target="_blank">Add Visitors</a></li>
+                                <li class="divider"></li>
+                                <li><a href="addLocation.php" target="_blank">Add Location</a></li>
+                                <li class="divider"></li>
+                                <li><a href="addAccount.php" target="_blank">Add Account</a></li>
+                                <li class="divider"></li>
+                                <li><a href="addPoliticalLeaders.php" target="_blank">Add Political Leaders</a></li>
+                                <li class="divider"></li>
+                                <li><a href="addMartyrs.php" target="_blank">Add Martyrs</a></li>
+                                <li class="divider"></li>
+                                <li><a href="addSectors.php" target="_blank">Add Sectors</a></li>
+                                <li class="divider"></li>
+                                <li><a href="addSubsectorCommander.php" target="_blank">Add Sub Sector Commander</a></li>
+                                <li class="divider"></li>
+                                <li><a href="addSectorAreaCovered.php" target="_blank">Add Sector Area Covered</a></li>
+                                <li class="divider"></li>
+                                <li><a href="addSculpture.php" target="_blank">Add Sculpture</a></li>
+                                <li class="divider"></li>
+                                <li><a href="addArtifacts.php" target="_blank">Add Artifacts</a></li>
                                 <li class="divider"></li>
                             </ul>
                         </li>
 
-
+                        <li class="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">Update<b class="caret"></b></a>
+                            <ul class="dropdown-menu">
+                                <li><a href="addEmployee.php" target="_blank">Update Employee</a></li>
+                                <li class="divider"></li>
+                                <li><a href="updateArtists.php" target="_blank">Update Artists</a></li>
+                                <li class="divider"></li>
+                                <li><a href="addWeapon.php">Add Weapons</a></li>
+                                <li class="divider"></li>
+                                <li><a href="addFreedomFighters.php" target="_blank">Add Freedom Fighters</a></li>
+                                <li class="divider"></li>
+                                <li><a href="addArts.php" target="_blank">Add Arts</a></li>
+                                <li class="divider"></li>
+                                <li><a href="addPaintings.php" target="_blank">Add Paintings</a></li>
+                                <li class="divider"></li>
+                                <li><a href="addSculpture.php" target="_blank">Add Sculpture</a></li>
+                                <li class="divider"></li>
+                                <li><a href="addArtifacts.php" target="_blank">Add Artifacts</a></li>
+                                <li class="divider"></li>
+                                <li><a href="addWarCriminals.php" target="_blank">Add War Criminals</a></li>
+                                <li class="divider"></li>
+                                <li><a href="addVisitors.php" target="_blank">Add Visitors</a></li>
+                                <li class="divider"></li>
+                                <li><a href="addLocation.php" target="_blank">Add Location</a></li>
+                                <li class="divider"></li>
+                                <li><a href="addAccount.php" target="_blank">Add Account</a></li>
+                                <li class="divider"></li>
+                                <li><a href="addPoliticalLeaders.php" target="_blank">Add Political Leaders</a></li>
+                                <li class="divider"></li>
+                                <li><a href="addMartyrs.php" target="_blank">Add Martyrs</a></li>
+                                <li class="divider"></li>
+                                <li><a href="addSectors.php" target="_blank">Add Sectors</a></li>
+                                <li class="divider"></li>
+                                <li><a href="addSubsectorCommander.php" target="_blank">Add Sub Sector Commander</a></li>
+                                <li class="divider"></li>
+                                <li><a href="addSectorAreaCovered.php" target="_blank">Add Sector Area Covered</a></li>
+                                <li class="divider"></li>
+                                <li><a href="addSculpture.php" target="_blank">Add Sculpture</a></li>
+                                <li class="divider"></li>
+                                <li><a href="addArtifacts.php" target="_blank">Add Artifacts</a></li>
+                                <li class="divider"></li>
+                            </ul>
+                        </li>
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Delete<b class="caret"></b></a>
                             <ul class="dropdown-menu">
@@ -91,6 +161,7 @@
         </div>
     </div>
 </header>
+
 
 
 <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>

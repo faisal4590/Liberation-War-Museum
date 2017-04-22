@@ -48,6 +48,9 @@ include "includes/header.php";
                 <th scope="column" style="text-align: center;">Father's Name</th>
                 <th scope="column" style="text-align: center;">Mother's Name</th>
                 <th scope="column" style="text-align: center;">Age</th>
+                <th scope="column" style="text-align: center;">Working Hour </th>
+                <th scope="column" style="text-align: center;">Blood Group</th>
+                <th scope="column" style="text-align: center;">Salary</th>
                 <th scope="column" style="text-align: center;">Image</th>
             </tr>
             </thead>
@@ -56,10 +59,12 @@ include "includes/header.php";
             <tr>
                 <?php
                 $conn = oci_connect("system", "faisal4590", "localhost/faisal");
-                $stid = oci_parse($conn, 'SELECT EMPLOYEE_NAME,EMPLOYEE_RELIGION,
+/*                $stid = oci_parse($conn, 'SELECT EMPLOYEE_NAME,EMPLOYEE_RELIGION,
                 EMPLOYEE_DOB, EMPLOYEE_SSC_GPA, EMPLOYEE_ROAD_NO, 
                 EMPLOYEE_CLASS, EMPLOYEE_FATHERS_NAME,EMPLOYEE_MOTHERS_NAME,
-                EMPLOYEE_WORKING_HOUR_STARTS,EMPLOYEE_IMAGE_NAME  FROM employee');
+                EMPLOYEE_WORKING_HOUR_STARTS  FROM employee');*/
+
+                $stid = oci_parse($conn,"select * from EMPLOYEE");
                 oci_execute($stid);
                 $i = 0;
                 while (($row = oci_fetch_array($stid, OCI_ASSOC + OCI_RETURN_NULLS)) != false)
@@ -72,6 +77,14 @@ include "includes/header.php";
                     print_r($row);
                     echo "</pre>";*/
 
+                    $workingHourStarts = date('H:i A', strtotime($row['EMPLOYEE_WORKING_HOUR_STARTS']));
+                    $workingHourEnds = date('H:i A', strtotime($row['EMPLOYEE_WORKING_HOUR_ENDS']));
+
+                    var_dump($workingHourStarts);
+                    var_dump($workingHourEnds);
+                    var_dump($row['EMPLOYEE_WORKING_HOUR_STARTS']);
+                    var_dump($row['EMPLOYEE_WORKING_HOUR_ENDS']);
+
                     echo '<tr>';
 
                     echo '<th scope="row">' . $row['EMPLOYEE_NAME'] . '</th>';
@@ -82,13 +95,21 @@ include "includes/header.php";
                     echo '<td scope="row">' . $row['EMPLOYEE_CLASS'] . '</td>';
                     echo '<td scope="row">' . $row['EMPLOYEE_FATHERS_NAME'] . '</td>';
                     echo '<td scope="row">' . $row['EMPLOYEE_MOTHERS_NAME'] . '</td>';
-                    echo '<td scope="row">' . $interval . '</td>';
-                    echo '<td scope="row"> <img  style="float: left; border-radius: 50%;
+                    echo '<td scope="row">' . $interval . '</td>';///employee age
+
+                    echo '<td scope="row">'. $workingHourStarts . ' - '. $workingHourEnds. '</td>';
+                    echo '<td scope="row">'. $row['BLOOD_GROUP'] . '</td>';
+                    echo '<td scope="row">'. $row['SALARY'] . '</td>';
+
+
+
+
+                    /*echo '<td scope="row"> <img  style="float: left; border-radius: 50%;
                      -webkit-transition: -webkit-transform .8s ease-in-out;
                      transition: transform .8s ease-in-out;"
                  height="200" width="200"
                  src="admin/images/employee_images/' . $row['EMPLOYEE_IMAGE_NAME'] . ' " alt="Kamla 01"> ' . '</td>';
-                    echo '</tr>';
+                */    echo '</tr>';
                 }
 
                 oci_free_statement($stid);

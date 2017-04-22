@@ -1,6 +1,6 @@
 create table painting
 (
-  art_id number generated always as identity (start with 4901 increment by 1),
+  art_id number,
   painting_id varchar(100),
   painting_type varchar(155),
   painting_award varchar(155),

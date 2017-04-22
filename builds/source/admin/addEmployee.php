@@ -299,6 +299,36 @@ include "header.php";
 
 
                                     <div class="form-group">
+                                        <label for="repeatPassword">Blood Group : </label>
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="fa fa-database"></i></span>
+                                            <div class="icon-addon">
+                                                <select name="bloodGroup" style="height: 30px;">
+                                                    <option>A+</option>
+                                                    <option>A-</option>
+                                                    <option>B+</option>
+                                                    <option>B-</option>
+                                                    <option>AB+</option>
+                                                    <option>O-</option>
+                                                </select>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+                                    <div class="form-group">
+                                        <label for="repeatPassword">Salary : </label>
+                                        <div class="input-group">
+                                            <span class="input-group-addon"><i class="fa fa-dollar"></i></span>
+                                            <div class="icon-addon">
+                                                <input class="form-control"
+                                                       placeholder="employee salary"
+                                                       type='text' required name='salary'>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
                                         <label style="font-size: 18px;" for="bookImage">Upload Employee Image</label><br>
                                         <input type='file' name='employeeImage'>
                                     </div>

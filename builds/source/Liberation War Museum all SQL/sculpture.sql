@@ -1,6 +1,6 @@
 create table sculpture
 (
-art_id number generated always as identity (start with 4901 increment by 1),
+art_id number,
 sculpture_id varchar(100),
 sculpture_height number(8,3) check(sculpture_height>0),
 sculpture_width number(8,3) check(sculpture_width>0),

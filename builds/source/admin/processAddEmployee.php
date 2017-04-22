@@ -69,10 +69,11 @@ if (!empty($_POST))
     $empFatherName        = htmlspecialchars($_POST['employeeFatherName']);
     $empMotherName        = htmlspecialchars($_POST['employeeMotherName']);
     $empFingerPrintID     = htmlspecialchars($_POST['employeeFingerPrintID']);
-    $empWorkingHourStarts = htmlspecialchars(date('m.d.y H:i:s', strtotime($_POST['employeeWorkingHourStarts'])));
-    $empWorkingHourEnds   = htmlspecialchars(date('m.d.y H:i:s', strtotime($_POST['employeeWorkingHourEnds'])));
+    $empWorkingHourStarts = htmlspecialchars(date('d.m.y H:i:s', strtotime($_POST['employeeWorkingHourStarts'])));
+    $empWorkingHourEnds   = htmlspecialchars(date('d.m.y H:i:s', strtotime($_POST['employeeWorkingHourEnds'])));
     //$empImage             = htmlspecialchars($_POST['employeeImage']);
-
+    $empBloodGroup          = htmlspecialchars($_POST['bloodGroup']);
+    $empSalary                  = htmlspecialchars($_POST['salary']);
 
 
     if (empty($_FILES['employeeImage']['name']))
@@ -109,16 +110,16 @@ if (!empty($_POST))
         EMPLOYEE_GRADUATE_CGPA,EMPLOYEE_POST_GRADUATE_CGPA,EMPLOYEE_ROAD_NO,EMPLOYEE_HOUSE_NO,
         EMPLOYEE_FLAT_NO,EMPLOYEE_ZIP_CODE,EMPLOYEE_DISTRICT,EMPLOYEE_POST_CODE,EMPLOYEE_CLASS,
         EMPLOYEE_FATHERS_NAME,EMPLOYEE_MOTHERS_NAME,EMPOLYEE_FINGERPRINT_ID,
-        EMPLOYEE_IMAGE_NAME) 
+        EMPLOYEE_WORKING_HOUR_STARTS,EMPLOYEE_WORKING_HOUR_ENDS,BLOOD_GROUP,SALARY) 
         VALUES( :E_NAME,:E_RELIGION,TO_DATE('" . $empDOB . "','MM/DD/YYYY'),:E_SSC,:E_HSC,
         :E_GRADUATE,:E_POST_GRADUATE,:E_ROAD,:E_HOUSE,:E_FLAT,:E_ZIP,:E_DISTRICT,:E_POSTCODE,
-        :E_CLASS,:E_FATHER,:E_MOTHER,:E_FINGER,:E_IMAGE)";
+        :E_CLASS,:E_FATHER,:E_MOTHER,:E_FINGER, to_date('" . $empWorkingHourStarts . "','dd/mm/yy HH:MI:SS'),
+         to_date('" . $empWorkingHourEnds . "','dd/mm/yy HH:MI:SS'),:BLOOD_GROUP,:SALARY)";
     $stid = oci_parse($c1, $stmt);
 
 
     oci_bind_by_name($stid, ':E_NAME', $empName);
     oci_bind_by_name($stid, ':E_RELIGION', $empReligion);
-    //oci_bind_by_name($stid, ':E_DOB', $empDOB);
     oci_bind_by_name($stid, ':E_SSC', $empSSCGPA);
     oci_bind_by_name($stid, ':E_HSC', $empHSCGPA);
     oci_bind_by_name($stid, ':E_GRADUATE', $empGraduateCGPA);
@@ -133,10 +134,22 @@ if (!empty($_POST))
     oci_bind_by_name($stid, ':E_FATHER', $empFatherName);
     oci_bind_by_name($stid, ':E_MOTHER', $empMotherName);
     oci_bind_by_name($stid, ':E_FINGER', $empFingerPrintID);
-    oci_bind_by_name($stid, ':E_IMAGE', $empImage);
+    oci_bind_by_name($stid, ':BLOOD_GROUP', $empBloodGroup);
+    oci_bind_by_name($stid, ':SALARY', $empSalary);
 
 
     oci_execute($stid);
+
+    $stmt = "INSERT INTO images_view
+        VALUES(:image_name)";
+
+    $stid = oci_parse($c1, $stmt);
+
+    oci_bind_by_name($stid, ':image_name', $empImage);
+
+    oci_execute($stid);
+
+
     echo '<p class="text-center alert-success"
         style="font-size: 20px;font-weight: bold;padding: 5px;">Data Successfully Inserted.
            <a href="index.php">click here to go back.</a></p>';
