@@ -1,0 +1,9 @@
+Create table employee_visitors
+(
+employee_id number,
+ticket_no number,
+	CONSTRAINT emp_visitors_employee_id_FK FOREIGN KEY(employee_id ) 
+			REFERENCES  employee(employee_id ),
+	CONSTRAINT emp_visitors_ticket_no_fk foreign KEY(TICKET_NO) 
+			REFERENCES  visitors(ticket_no)
+);

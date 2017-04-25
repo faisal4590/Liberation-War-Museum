@@ -87,8 +87,8 @@ if (!empty($_POST))
     oci_execute($stid);
 
 
-    $stmt = "INSERT INTO images_view
-        VALUES(:image_name)";
+    $stmt = 'INSERT INTO images_view
+        VALUES(:image_name)';
 
     $stid = oci_parse($c1, $stmt);
 

@@ -20,13 +20,13 @@
 
 $c1 = oci_connect("system", "faisal4590", 'localhost/faisal');
 
-
+//$artist_date_of_death  = htmlspecialchars(date('d/m/y', strtotime($_POST['artistDateOfDeath'])));
 $artistID        = (int)htmlspecialchars($_POST['artistID']);
 $artPlace        = htmlspecialchars($_POST['artPlace']);
-$dateOfDeath     = htmlspecialchars($_POST['dateOfDeath']);
+$dateOfDeath     = htmlspecialchars(date('d/m/y', strtotime($_POST['dateOfDeath'])));
 $worth_value     = htmlspecialchars($_POST['worth_value']);
-$dateOfRetrieval = htmlspecialchars($_POST['dateOfRetrieval']);
-$test            = htmlspecialchars($_POST['dateOfDeath']);
+$dateOfRetrieval = htmlspecialchars(date('d/m/y', strtotime($_POST['dateOfRetrieval'])));
+//$test            = htmlspecialchars(date('d/m/y', strtotime($_POST['dateOfDeath'])));
 
 
 /*$stmt = "INSERT INTO ART

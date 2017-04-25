@@ -1,0 +1,9 @@
+Create table forces_sector
+(
+forces_type varchar(155),
+sector_no   NUMBER,
+CONSTRAINT forces_sector_forces_type_fk foreign KEY(forces_type) 
+			REFERENCES  forces(forces_type),
+CONSTRAINT forces_sector_sector_no_fk foreign KEY(sector_no) 
+			REFERENCES  sector(sector_no)
+);

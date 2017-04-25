@@ -1,0 +1,9 @@
+Create table freedom_fighters_forces
+(
+freedom_fighter_id  NUMBER,
+forces_type varchar(155),
+CONSTRAINT fff_freedom_fighter_id_fk foreign KEY(freedom_fighter_id) 
+			REFERENCES  freedom_fighters(freedom_fighter_id),
+CONSTRAINT fff_forces_type_fk foreign KEY(forces_type) 
+			REFERENCES  forces(forces_type)
+);

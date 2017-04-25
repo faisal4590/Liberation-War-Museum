@@ -1,0 +1,12 @@
+Create table gallery_location
+(
+
+gallery_no number,
+room_no NUMBER,
+
+CONSTRAINT gallery_location_gallery_no_fk foreign KEY(gallery_no) 
+			REFERENCES  gallery(gallery_no),
+CONSTRAINT gallery_location_room_no_fk foreign KEY(room_no) 
+			REFERENCES  location(room_no)
+
+);

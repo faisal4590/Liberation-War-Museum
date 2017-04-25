@@ -1,0 +1,10 @@
+Create table exhibition_contributors
+(
+exibition_no VARCHAR(100) ,	
+nid number,
+
+CONSTRAINT exibtn_cntributr_exibitn_no_fk foreign KEY(exibition_no) 
+			REFERENCES  exhibition(exibition_no),
+CONSTRAINT exibtn_cntributr_nid_fk foreign KEY(nid) 
+			REFERENCES  contributors(nid)
+);

@@ -1,0 +1,11 @@
+Create table martyrs_sector
+(
+martyr_id NUMBER,
+sector_no NUMBER,
+
+CONSTRAINT martyr_sector_martyr_id_fk foreign KEY(martyr_id) 
+			REFERENCES  martyrs(martyr_id),
+CONSTRAINT martyr_sector_sector_no_fk foreign KEY(sector_no) 
+			REFERENCES sector(sector_no)
+
+);

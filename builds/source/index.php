@@ -37,7 +37,7 @@ require_once('connection/connection.php');
 
 
 <?php
-include('includes/header.php');
+include('headerAdmin.php');
 ?>
 
 <section class="background jumbotron" id="jumbotron">

@@ -1,0 +1,19 @@
+Create table art_artist
+(
+  ART_ID number,
+  ARTIST_NID NUMBER,
+  CONSTRAINT art_artist_art_id_fk foreign KEY(art_id)
+  REFERENCES art(art_id),
+  CONSTRAINT art_artist_artist_nid_fk foreign KEY(ARTIST_NID)
+  REFERENCES  ARTIST(ARTIST_NID)
+);
+
+
+INSERT INTO ARTIST_ART_GALLERY_LOC_VIEW
+("Art Name", "Artist Name", "ARTIST AGE", "Artist Country", "Gallery No",
+ "Gallery Name", "Art Value", "Painting Date", "Retrieval Date", "Room No",
+ "Floor No", "Section")
+VALUES ('Kal Rat','Joynul Abedin',
+                  'Bangladesh',2,'1971 ERA',
+                  10000,to_date('12/3/1987','DD/MM/YYYY'),
+        to_date('12/3/1989','DD/MM/YYYY'),205,2,'East Wing' );

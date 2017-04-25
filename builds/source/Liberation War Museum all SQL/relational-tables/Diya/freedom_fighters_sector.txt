@@ -1,0 +1,9 @@
+Create table freedom_fighters_sector
+(
+freedom_fighter_id  NUMBER,
+sector_no   NUMBER,
+CONSTRAINT ffsector_freedom_fighter_id_fk foreign KEY(freedom_fighter_id) 
+			REFERENCES  freedom_fighters(freedom_fighter_id),
+CONSTRAINT ffsector_sector_no_fk foreign KEY(sector_no) 
+			REFERENCES  sector(sector_no)
+);

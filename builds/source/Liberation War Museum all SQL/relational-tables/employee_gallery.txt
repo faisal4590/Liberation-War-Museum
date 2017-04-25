@@ -1,0 +1,9 @@
+Create table employee_gallery
+(
+employee_id number,
+gallery_no number,
+	CONSTRAINT emp_gallery_employee_id_FK FOREIGN KEY(employee_id ) 
+			REFERENCES  employee(employee_id ),
+	CONSTRAINT emp_gallery_gallery_no_fk foreign KEY(gallery_no) 
+			REFERENCES  gallery(gallery_no)
+);

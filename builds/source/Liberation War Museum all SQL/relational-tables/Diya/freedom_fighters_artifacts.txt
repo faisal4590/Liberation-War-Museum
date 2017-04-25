@@ -1,0 +1,9 @@
+Create table freedom_fighters_artifacts
+(
+freedom_fighter_id  NUMBER,
+artifact_id NUMBER,
+CONSTRAINT ffa_freedom_fighter_id_fk foreign KEY(freedom_fighter_id) 
+			REFERENCES  freedom_fighters(freedom_fighter_id),
+CONSTRAINT ffa_artifact_id_fk foreign KEY(artifact_id) 
+			REFERENCES  artifacts(artifact_id)
+);

@@ -1,0 +1,9 @@
+Create table employee_donors
+(
+employee_id number,
+ticket_no number,
+	CONSTRAINT emp_donors_employee_id_FK FOREIGN KEY(employee_id ) 
+			REFERENCES  employee(employee_id ),
+	CONSTRAINT emp_donors_donor_id_fk foreign KEY(ticket_no) 
+			REFERENCES  donors(ticket_no)
+);

@@ -1,0 +1,10 @@
+Create table sector_battles
+(
+sector_no   NUMBER,
+battle_name varchar(100),
+CONSTRAINT sector_battle_sector_no_fk foreign KEY(sector_no) 
+			REFERENCES  sector(sector_no),
+CONSTRAINT sector_battle_battle_name_fk foreign KEY(battle_name) 
+			REFERENCES  battles(battle_name)
+
+);

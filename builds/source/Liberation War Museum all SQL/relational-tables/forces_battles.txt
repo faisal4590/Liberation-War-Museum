@@ -1,0 +1,10 @@
+Create table forces_battles
+(
+forces_type varchar(155),
+battle_name varchar(100),
+CONSTRAINT forces_battle_forces_type_fk foreign KEY(forces_type) 
+			REFERENCES  forces(forces_type),
+CONSTRAINT forces_battle_battle_name_fk foreign KEY(battle_name) 
+			REFERENCES  battles(battle_name)
+
+);

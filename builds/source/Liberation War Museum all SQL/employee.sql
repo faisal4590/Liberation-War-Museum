@@ -23,8 +23,10 @@ employee_mothers_name varchar(50),
 empolyee_fingerprint_id varchar(100),
 employee_working_hour_starts  timestamp,
 employee_working_hour_ends  timestamp,
-employee_image_name varchar(150),
 
+employee_image_name varchar(150),
+blood_group varchar(100),
+salary number(8,3)
 
 CONSTRAINT EMPLOYEE_EMPLOYEE_ID_pk PRIMARY KEY(EMPLOYEE_ID)
 );

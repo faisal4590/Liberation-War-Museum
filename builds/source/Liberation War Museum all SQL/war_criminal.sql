@@ -1,7 +1,7 @@
 create table war_criminal
 (
 
-  war_criminal_id NUMBER GENERATED ALWAYS AS IDENTITY (START WITH 199311001 INCREMENT BY 1) ,
+  war_criminal_id NUMBER ,
   name varchar(100),
   crimes varchar(100),
   battle varchar(100),

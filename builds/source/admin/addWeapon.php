@@ -67,6 +67,52 @@ include "header.php";
                     <div class="row">
                         <div class="col-lg-12 col-md-8 col-sm-8 col-xs-8">
                             <form action="processAddWeapon.php" method="post" enctype="multipart/form-data">
+
+                                <?php
+                                $conn = oci_connect("system", "faisal4590", "localhost/faisal");
+                                $stid = oci_parse($conn, 'SELECT * FROM ARTIFACTS');
+
+                                oci_execute($stid);
+
+                                $var1 = 0;
+                                while ($row = oci_fetch_array($stid, OCI_ASSOC + OCI_RETURN_NULLS))
+                                {
+                                    $temp[$var1++] = $row['ARTIFACT_ID'];
+                                }
+                                oci_close($conn);
+                                ?>
+
+                                <div class="form-group">
+                                    <label for="fullname">Artifact ID : </label>
+                                    <div class="input-group">
+                                            <span class="input-group-addon"> <i
+                                                        class="glyphicon glyphicon-user"></i></span>
+                                        <div class="icon-addon">
+                                            <select name="artifactID" class="form-control" style="height: 30px;">
+                                                <?php
+                                                for ($p = 0; $p < $var1; $p++)
+                                                {
+                                                    echo '<option>' . " {$temp[$p]} " . '</option>';
+                                                }
+                                                ?>
+
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="fullname">Weapon ID : </label>
+                                    <div class="input-group">
+                                            <span class="input-group-addon"> <i
+                                                        class="glyphicon glyphicon-user"></i></span>
+                                        <div class="icon-addon">
+                                            <input class="form-control" placeholder="weapon id"
+                                                   type='number' name='weaponID'>
+                                        </div>
+                                    </div>
+                                </div>
+
                                 <div class="form-group">
                                     <label for="fullname">Weapon Capacity : </label>
                                     <div class="input-group">

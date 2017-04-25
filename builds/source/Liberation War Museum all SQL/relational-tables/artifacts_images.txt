@@ -1,0 +1,10 @@
+Create table artifacts_images
+(
+artifact_id NUMBER,
+image_id NUMBER,
+
+CONSTRAINT artifct_image_artifct_id_fk foreign KEY(artifact_id) 
+			REFERENCES  artifacts(artifact_id),
+CONSTRAINT artifct_image_image_id_fk foreign KEY (image_id)
+			REFERENCES  images(image_id)
+);

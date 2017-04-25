@@ -1,0 +1,10 @@
+Create table political_leaders_artifacts
+(
+political_leaders_id NUMBER ,
+artifact_id NUMBER,
+
+CONSTRAINT political_artifct_leadr_id_fk foreign KEY(political_leaders_id) 
+			REFERENCES  political_leaders(political_leaders_id),
+CONSTRAINT political_artifct_artfct_id_fk foreign KEY(artifact_id) 
+			REFERENCES  artifacts(artifact_id)
+);

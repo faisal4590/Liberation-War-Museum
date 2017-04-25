@@ -1,7 +1,7 @@
 create table weapon
 (
 
-  artifact_id NUMBER GENERATED ALWAYS AS IDENTITY (START WITH 769001 INCREMENT BY 1) ,
+  artifact_id NUMBER,
   weapon_id varchar(100) ,
   weapon_capacity integer,
   weapon_cost number(8,3) CHECK (weapon_cost > 0),

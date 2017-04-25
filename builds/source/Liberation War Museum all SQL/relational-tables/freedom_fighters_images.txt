@@ -1,0 +1,9 @@
+Create table freedom_fighters_images
+(
+freedom_fighter_id  NUMBER,
+image_id NUMBER,
+CONSTRAINT ffi_freedom_fighter_id_fk foreign KEY(freedom_fighter_id) 
+			REFERENCES  freedom_fighters(freedom_fighter_id),
+CONSTRAINT ffi_image_id_fk foreign KEY (image_id)
+			REFERENCES  images(image_id)
+);

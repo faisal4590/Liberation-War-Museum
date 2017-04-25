@@ -1,0 +1,9 @@
+Create table war_criminal_forces
+(
+war_criminal_id NUMBER,
+forces_type varchar(155),
+CONSTRAINT wc_frce_war_criminal_id_fk foreign KEY(war_criminal_id) 
+			REFERENCES  war_criminal(war_criminal_id),
+CONSTRAINT wc_frce_forces_type_fk foreign KEY(forces_type) 
+			REFERENCES  forces(forces_type)
+);

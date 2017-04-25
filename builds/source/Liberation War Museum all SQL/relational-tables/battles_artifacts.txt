@@ -1,0 +1,10 @@
+Create table battles_artifacts
+(
+
+battle_name varchar(100),
+artifact_id NUMBER,
+CONSTRAINT battle_artifact_battle_name_fk foreign KEY(battle_name) 
+			REFERENCES  battles(battle_name),
+CONSTRAINT battle_artifact_artifact_id_fk foreign KEY(artifact_id) 
+			REFERENCES  artifacts(artifact_id)
+);

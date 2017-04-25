@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="font-awesome-4.6.3/css/font-awesome.min.css">
 	<link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/style.css">
 
 </head>
 
@@ -23,7 +24,7 @@
 
 <div id="wholeContainer">
     <?php
-    include "includes/header.php";
+    include 'headerAdmin.php';
     ?>
     <!-- start header -->
     <div>

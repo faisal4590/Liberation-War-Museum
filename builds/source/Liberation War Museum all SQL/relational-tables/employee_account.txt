@@ -1,0 +1,9 @@
+Create table employee_account
+(
+employee_id number,
+account_id NUMBER ,
+	CONSTRAINT emp_account_employee_id_FK FOREIGN KEY(employee_id ) 
+			REFERENCES  employee(employee_id ),
+	CONSTRAINT emp_account_account_id_fk foreign KEY(account_id) 
+			REFERENCES  account(account_id)
+);

@@ -1,5 +1,5 @@
 CREATE TABLE freedom_fighters_children(
-  freedom_fighter_id  NUMBER GENERATED ALWAYS AS IDENTITY (START WITH 60983001 INCREMENT BY 1) ,
+  freedom_fighter_id  NUMBER ,
   children_name varchar(100),
   children_gender varchar(100),
   children_dob DATE,

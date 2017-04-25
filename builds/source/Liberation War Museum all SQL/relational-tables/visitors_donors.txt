@@ -1,0 +1,10 @@
+Create table visitors_donors
+(
+ticket_no number,
+donor_id number,		
+CONSTRAINT visitors_donors_ticket_no_fk foreign KEY(TICKET_NO) 
+			REFERENCES  visitors(ticket_no),
+CONSTRAINT visitors_donors_donor_id_fk foreign KEY(TICKET_NO) 
+			REFERENCES  donors(TICKET_NO)
+      
+);

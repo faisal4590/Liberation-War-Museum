@@ -1,0 +1,9 @@
+Create table artifacts_contributors
+(
+artifact_id NUMBER,
+nid number,
+CONSTRAINT artfct_cntributr_artifct_id_fk foreign KEY(artifact_id) 
+			REFERENCES  artifacts(artifact_id),
+CONSTRAINT artifct_cntributr_nid_fk foreign KEY(nid) 
+			REFERENCES  contributors(nid)
+);

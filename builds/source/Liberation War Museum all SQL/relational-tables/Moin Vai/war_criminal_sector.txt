@@ -1,0 +1,10 @@
+Create table war_criminal_sector
+(
+war_criminal_id NUMBER,
+sector_no   NUMBER,
+CONSTRAINT wc_sector_war_criminal_id_fk foreign KEY(war_criminal_id) 
+			REFERENCES  war_criminal(war_criminal_id),
+CONSTRAINT wc_sector_sector_no_fk foreign KEY(sector_no) 
+			REFERENCES  sector(sector_no)
+
+);

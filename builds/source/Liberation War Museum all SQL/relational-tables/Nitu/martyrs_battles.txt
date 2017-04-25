@@ -1,0 +1,11 @@
+Create table martyrs_battles
+(
+martyr_id NUMBER,
+battle_name varchar(100),
+
+CONSTRAINT martyr_battle_martyr_id_fk foreign KEY(martyr_id) 
+			REFERENCES  martyrs(martyr_id),
+CONSTRAINT martyr_battle_battle_name_fk foreign KEY(battle_name) 
+			REFERENCES  battles(battle_name)
+
+);

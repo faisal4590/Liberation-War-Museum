@@ -1,0 +1,9 @@
+Create table donors_account
+(
+donor_id number,
+account_id NUMBER,
+CONSTRAINT donors_account_donor_id_fk foreign KEY(TICKET_NO) 
+			REFERENCES  donors(TICKET_NO),
+CONSTRAINT donors_account_account_id_fk foreign KEY(account_id) 
+			REFERENCES  account(account_id)
+);

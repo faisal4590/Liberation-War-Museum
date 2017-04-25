@@ -1,0 +1,9 @@
+Create table art_gallery
+(
+art_id number,
+gallery_no number,
+CONSTRAINT art_gallery_art_id_fk foreign KEY(art_id) 
+			REFERENCES art(art_id),
+CONSTRAINT art_gallery_gallery_no_fk foreign KEY(gallery_no) 
+			REFERENCES  gallery(gallery_no)
+);

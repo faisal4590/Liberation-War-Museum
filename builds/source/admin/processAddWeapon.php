@@ -36,9 +36,10 @@ if (!empty($_POST))
     {
         $msg .= '<p>Please fill up all the data</p>';
     }
-
+    $artifactID                    =(int) htmlspecialchars($_POST['artifactID']);
+    $weaponID                   =htmlspecialchars($_POST['weaponID']);
     $weapon_capacity           = htmlspecialchars($_POST['weaponCapacity']);
-    $weapon_cost  = htmlspecialchars($_POST['weaponCost']);
+    $weapon_cost                 = htmlspecialchars($_POST['weaponCost']);
     $weapon_model            = htmlspecialchars($_POST['weaponModel']);
     $weapon_weight           = htmlspecialchars($_POST['weaponWeight']);
     $weapon_manufacturer = htmlspecialchars($_POST['weaponManufacturer']);
@@ -72,12 +73,16 @@ if (!empty($_POST))
 
 
 
-    $stmt = "INSERT INTO WEAPON(WEAPON_CAPACITY,WEAPON_COST,WEAPON_MODEL,WEAPON_WEIGHT,WEAPON_MANUFACTURER)
-        VALUES(:weapon_capacity,:weapon_cost,
-        :weapon_model,:weapon_weight,:weapon_manufacturer)";
+    $stmt = 'INSERT INTO WEAPON(ARTIFACT_ID, 
+        WEAPON_ID,WEAPON_CAPACITY  ,WEAPON_COST,WEAPON_MODEL,
+        WEAPON_WEIGHT,WEAPON_MANUFACTURER)
+        VALUES(:ARTIFACT_ID,:WEAPON_ID,:weapon_capacity,:weapon_cost,
+        :weapon_model,:weapon_weight,:weapon_manufacturer)';
 
     $stid = oci_parse($c1, $stmt);
 
+    oci_bind_by_name($stid, ':ARTIFACT_ID', $artifactID);
+    oci_bind_by_name($stid, ':WEAPON_ID', $weaponID);
     oci_bind_by_name($stid, ':weapon_capacity', $weapon_capacity);
     oci_bind_by_name($stid, ':weapon_cost', $weapon_cost);
     oci_bind_by_name($stid, ':weapon_model', $weapon_model);

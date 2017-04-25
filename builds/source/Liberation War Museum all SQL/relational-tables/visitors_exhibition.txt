@@ -1,0 +1,9 @@
+Create table visitors_exhibition
+(
+ticket_no number,
+exibition_no VARCHAR(100) ,		
+CONSTRAINT visitr_exibitn_ticket_no_fk foreign KEY(TICKET_NO) 
+			REFERENCES  visitors(ticket_no),
+CONSTRAINT visitr_exibitn_exibition_no_fk foreign KEY(exibition_no) 
+			REFERENCES  exhibition(exibition_no)
+);

@@ -1,0 +1,11 @@
+Create table political_leaders_martyrs
+(
+martyr_id NUMBER,
+political_leaders_id NUMBER ,
+
+CONSTRAINT political_martyr_martyr_id_fk foreign KEY(martyr_id) 
+			REFERENCES  martyrs(martyr_id),
+CONSTRAINT political_martyr_leaders_id_fk foreign KEY(political_leaders_id) 
+			REFERENCES  political_leaders(political_leaders_id)
+
+);

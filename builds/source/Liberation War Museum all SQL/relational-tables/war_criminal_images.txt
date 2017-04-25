@@ -1,0 +1,10 @@
+Create table war_criminal_images
+(
+war_criminal_id NUMBER,
+image_id NUMBER,
+CONSTRAINT wc_image_war_criminal_id_fk foreign KEY(war_criminal_id) 
+			REFERENCES  war_criminal(war_criminal_id),
+CONSTRAINT wc_image_image_id_fk foreign KEY (image_id)
+			REFERENCES  images(image_id)
+
+);

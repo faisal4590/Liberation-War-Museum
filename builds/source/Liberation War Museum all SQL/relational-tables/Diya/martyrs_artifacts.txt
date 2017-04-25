@@ -1,0 +1,10 @@
+Create table martyrs_artifacts
+(
+martyr_id NUMBER,
+artifact_id NUMBER,
+
+CONSTRAINT martyr_artifact_martyr_id_fk foreign KEY(martyr_id) 
+			REFERENCES  martyrs(martyr_id),
+CONSTRAINT martyr_artifact_artifact_id_fk foreign KEY(artifact_id) 
+			REFERENCES  artifacts(artifact_id)
+);

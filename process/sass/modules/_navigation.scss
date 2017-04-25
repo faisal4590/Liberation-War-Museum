@@ -1,3 +1,34 @@
+
+/*Bootstrap Navbar styles starts*/
+.caret-up {
+  width: 0;
+  height: 0;
+  border-left: 4px solid rgba(0, 0, 0, 0);
+  border-right: 4px solid rgba(0, 0, 0, 0);
+  border-bottom: 4px solid;
+
+  display: inline-block;
+  margin-left: 2px;
+  vertical-align: middle;
+}
+
+/*Bootstrap Navbar styles ends*/
+
+.header_title{
+  font-family: Cookie, "Harlow Solid Italic", monospace;
+
+}
+.header_title a{
+  font-size: 40px;
+}
+
+.menu{
+  font-family: Merriweather, Helvetica, sans-serif;
+  font-size: 16px;
+}
+
+
+/*
 nav
 {
   header &
@@ -82,4 +113,4 @@ nav
     }
 
   }
-}
+}*/

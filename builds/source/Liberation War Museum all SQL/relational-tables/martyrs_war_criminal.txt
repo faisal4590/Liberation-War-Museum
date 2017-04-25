@@ -1,0 +1,11 @@
+Create table martyrs_war_criminal
+(
+martyr_id NUMBER,
+war_criminal_id NUMBER,
+
+CONSTRAINT martyr_wc_war_criminal_id_fk foreign KEY(war_criminal_id) 
+			REFERENCES  war_criminal(war_criminal_id),
+CONSTRAINT martyr_wc_martyr_id_fk foreign KEY(martyr_id) 
+			REFERENCES  martyrs(martyr_id)
+
+);

@@ -1,0 +1,9 @@
+Create table employee_images
+(
+employee_id number,
+image_id NUMBER,
+	CONSTRAINT employee_images_employee_id_FK FOREIGN KEY(employee_id ) 
+			REFERENCES  employee(employee_id ),
+CONSTRAINT employee_images_image_id_fk foreign KEY (image_id)
+			REFERENCES  images(image_id)
+);

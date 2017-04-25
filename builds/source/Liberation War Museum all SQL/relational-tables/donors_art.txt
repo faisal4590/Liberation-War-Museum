@@ -1,0 +1,9 @@
+Create table donors_art
+(
+ticket_no number,
+art_id number,
+CONSTRAINT donors_art_donor_id_fk foreign KEY(ticket_no) 
+			REFERENCES  donors(ticket_no),
+CONSTRAINT donors_art_art_id_fk foreign KEY(art_id) 
+			REFERENCES art(art_id)
+);
