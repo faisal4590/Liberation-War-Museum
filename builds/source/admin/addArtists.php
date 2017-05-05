@@ -67,14 +67,27 @@ include "header.php";
                     <div class="row">
                         <div class="col-lg-12 col-md-8 col-sm-8 col-xs-8">
                             <form action="processAddArtist.php" method="post" enctype="multipart/form-data">
+
                                 <div class="form-group">
-                                    <label for="fullname">Art Place : </label>
+                                    <label for="fullname">Artist Name : </label>
                                     <div class="input-group">
                                             <span class="input-group-addon"> <i
                                                         class="glyphicon glyphicon-user"></i></span>
                                         <div class="icon-addon">
-                                            <input class="form-control" placeholder="art place"
-                                                   type='text' name='artPlace'>
+                                            <input class="form-control" placeholder="artist name"
+                                                   type='text' name='artistName'>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="form-group">
+                                    <label for="fullname">Artist Date Of Birth : </label>
+                                    <div class="input-group">
+                                            <span class="input-group-addon"> <i
+                                                        class="glyphicon glyphicon-user"></i></span>
+                                        <div class="icon-addon">
+                                            <input class="form-control" placeholder=""
+                                                   type='date' name='artistDOB'>
                                         </div>
                                     </div>
                                 </div>
@@ -86,34 +99,39 @@ include "header.php";
                                                         class="fa fa-user"></i></span>
                                         <div class="icon-addon">
                                             <input class="form-control"
-                                                   placeholder="artist date of death" required type='date'
+                                                   placeholder="artist date of death" type='date'
                                                    name='artistDateOfDeath'>
                                         </div>
                                     </div>
                                 </div>
 
+
                                 <div class="form-group">
-                                    <label for="password">Art Value : </label>
+                                    <label for="fullname">Artist Country : </label>
                                     <div class="input-group">
-                                        <span class="input-group-addon"><i class="fa fa-eye"></i></span>
+                                            <span class="input-group-addon"> <i
+                                                        class="glyphicon glyphicon-user"></i></span>
                                         <div class="icon-addon">
-                                            <input class="form-control" placeholder="art value"
-                                                   type='number' required name='artValue'>
+                                            <input class="form-control" placeholder="artist country"
+                                                   type='text' name='artistCountry'>
                                         </div>
                                     </div>
                                 </div>
 
+
                                 <div class="form-group">
-                                    <label for="repeatPassword">Date of retrieval : </label>
+                                    <label for="fullname">Artist Art Place : </label>
                                     <div class="input-group">
-                                        <span class="input-group-addon"><i class="fa fa-key"></i></span>
+                                            <span class="input-group-addon"> <i
+                                                        class="glyphicon glyphicon-user"></i></span>
                                         <div class="icon-addon">
-                                            <input class="form-control"
-                                                   placeholder="date of retrieval"
-                                                   type='date' name='dateOfRetrieval'>
+                                            <input class="form-control" placeholder="artist art place"
+                                                   type='text' name='artistArtPlace'>
                                         </div>
                                     </div>
                                 </div>
+
+
 
                                 <div class="form-group">
                                     <label style="font-size: 18px;" for="bookImage">Upload Artist Image</label><br>

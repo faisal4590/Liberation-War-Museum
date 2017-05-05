@@ -31,7 +31,10 @@ include "headerAdmin.php";
 
 
 
-$c1 = oci_connect("system", "faisal4590", 'localhost/faisal');
+//$c1 = oci_connect("system", "faisal4590", 'localhost/faisal');
+$db = new mysqli('localhost', 'root', '', 'liberation war museum')
+or die("Can't Connect to database");
+
 
 if (!empty($_POST))
 {

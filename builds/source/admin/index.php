@@ -34,7 +34,7 @@ include "header.php";
     <h1>Welcome to the admin page</h1>
 </div>
 
-<img src="funnyGif01.gif" height="500px" width="100%">
+<img src="coding.gif" height="500px" width="100%">
 
 </body>
 </html>

@@ -43,6 +43,7 @@
                 <div  class="collapse navbar-collapse menu" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav" >
                         <li class="active"><a href="index.php">Home</a></li>
+                        <li><a href="showUsers.php">users</a></li>
 
                         <li class="dropdown">
                             <a href="#" class="dropdown-toggle" data-toggle="dropdown">Insert 1<b class="caret"></b></a>
@@ -112,6 +113,9 @@
                                 <li><a href="addExibition.php" target="_blank">Add Exhibition</a></li>
                                 <li class="divider"></li>
                                 <li><a href="addHumanRemains.php" target="_blank">Add Human Remains</a></li>
+                                <li class="divider"></li>
+
+                                <li><a href="addDonors.php" target="_blank">Add Donors</a></li>
                                 <li class="divider"></li>
 
                             </ul>

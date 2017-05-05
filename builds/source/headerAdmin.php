@@ -5,7 +5,7 @@
  * Date: 4/9/2017
  * Time: 3:25 PM
  */
-
+//session_start();
 ?>
 
 <!doctype html>
@@ -40,27 +40,49 @@
                 </div>
 
                 <!-- Collect the nav links, forms, and other content for toggling -->
-                <div  class="collapse navbar-collapse menu" id="bs-example-navbar-collapse-1">
-                    <ul class="nav navbar-nav" >
+                <div class="collapse navbar-collapse menu" id="bs-example-navbar-collapse-1">
+                    <ul class="nav navbar-nav">
                         <li class="active"><a href="index.php">Home</a></li>
                         <li><a href="login.php" target="_blank">Login</a></li>
                         <li><a href="developedBy.php" target="_blank">About us</a></li>
-                        <li><a href="#jumbotron">Others</a></li>
-                        <li><a href="#typography">Bibliography</a></li>
-                        <li><a href="#buttons">Martyrs</a></li>
-                        <li><a href="#lists">Historical Battles</a></li>
-                        <li><a href="#media">Gallery</a></li>
+                        <li><a href="freedomFighters.php">Freedom Fighters</a></li>
                         <li><a href="employees.php" target="_blank">Employees</a></li>
+                        <li><a href="galleryInfo.php" target="_blank">Gallery Info</a></li>
+                        <li><a href="politicalLeaders.php" target="_blank">Political Leaders</a></li>
+                        <li><a href="artists.php" target="_blank">Artists</a></li>
+                        <li><a href="contributor.php" target="_blank">Contributor</a></li>
+                        <li><a href="donors.php" target="_blank">Donors</a></li>
+                        <li><a href="martyrs.php" target="_blank">Martyrs</a></li>
+                        <li><a href="bayezid%20vai.php" target="_blank">Test</a></li>
+                        <!--                        <li><a href="sector.php" target="_blank">Sector</a></li>-->
+                        <!--    <li><a href="advanceSearch.php" target="_blank">Advance Search</a></li>-->
+                        <li class="pull-right dropdown">
+                            <a href="#" target="_blank"> Users
+                                <ul class="dropdown-menu">
+                                    <li><a href="details.php" target="_blank">
+                                            <?php
+                                            if (isset($_SESSION['status']))
+                                            {
+                                                echo 'Hello ' . '<span style="color:deeppink;
+                                                font-style: italic">' . $_SESSION['username'] . '</span>';
+                                            }
+                                            ?>
+                                        </a>
+                                    </li>
+                                    <li class="divider"></li>
 
+                            </a>
+                        </li>
 
                     </ul>
-                    <form class="navbar-form navbar-right" role="search" action="processSearch.php">
-                        <div class="form-group">
-                            <input type="text" class="form-control" placeholder="Search by employee name"
-                                   name="searchEmployee">
-                        </div>
-                        <input type="submit"  class="btn btn-info" value="Submit" />
-                    </form>
+
+                            <form class="navbar-form navbar-left" role="search" action="processSearch.php">
+                                <div class="form-group">
+                                    <input type="text" class="form-control" placeholder="Search by employee name"
+                                           name="searchEmployee">
+                                </div>
+                                <input type="submit" class="btn btn-info" value="Submit"/>
+                            </form>
 
                 </div><!-- /.navbar-collapse -->
 
@@ -69,7 +91,6 @@
         </div>
     </div>
 </header>
-
 
 
 <script type="text/javascript" src="js/jquery-1.11.3.min.js"></script>

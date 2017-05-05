@@ -15,7 +15,7 @@
 <head>
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="font-awesome-4.6.3/css/font-awesome.min.css">
-	<link rel="stylesheet" href="css/animate.css">
+    <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="css/style.css">
 
 </head>
@@ -39,7 +39,7 @@
     <!-- start page -->
     <div id="sidebar">
         <?php
-       // include("includes/search.inc.php");
+        // include("includes/search.inc.php");
         ?>
     </div>
     <div id="page">
@@ -55,19 +55,22 @@
                     <br><br>
                     <?php
                     //error message for registration
-                    if (isset($_GET['error'])) {
+                    if (isset($_GET['error']))
+                    {
                         echo '<font color="red">' . $_GET['error'] . '</font>';
                         echo '<br><br>';
                     }
 
                     //error message for invalid user
-                    if (isset($_GET['errorinvaliduser'])) {
+                    if (isset($_GET['errorinvaliduser']))
+                    {
                         echo '<font color="red">' . $_GET['errorinvaliduser'] . '</font>';
                         echo '<br><br>';
                     }
 
                     //success message for registration
-                    if (isset($_GET['ok'])) {
+                    if (isset($_GET['ok']))
+                    {
                         echo '<p style="font-size: 18px;
                         font-weight: bold; text-align: center;
                         color: limegreen;
@@ -86,12 +89,12 @@
                             animation-delay: 0.35s; animation-name: rotateInDownLeft; ">
                         <div class="row">
                             <div class="col-lg-12 col-md-8 col-sm-8 col-xs-8">
-                                <form action="test.php" method="post">
+                                <form action="processRegister.php" method="post" enctype="multipart/form-data">
                                     <div class="form-group">
                                         <label for="fullname">Full name : </label>
                                         <div class="input-group">
                                             <span class="input-group-addon"> <i
-                                                    class="glyphicon glyphicon-user"></i></span>
+                                                        class="glyphicon glyphicon-user"></i></span>
                                             <div class="icon-addon">
                                                 <input class="form-control" placeholder="your full name"
                                                        type='text' size="30" maxlength="30" name='fnm'>
@@ -103,7 +106,7 @@
                                         <label for="username">Username : </label>
                                         <div class="input-group">
                                             <span class="input-group-addon"><i
-                                                    class="fa fa-user"></i></span>
+                                                        class="fa fa-user"></i></span>
                                             <div class="icon-addon">
                                                 <input class="form-control"
                                                        placeholder="your username" required type='text' size="30"
@@ -175,43 +178,159 @@
                                         <label for="mobile">Your mobile number : </label>
                                         <div class="input-group">
                                             <span class="input-group-addon"><i
-                                                    class="glyphicon glyphicon-phone"></i></span>
+                                                        class="glyphicon glyphicon-phone"></i></span>
                                             <div class="icon-addon">
                                                 <input class="form-control"
-                                                       placeholder="number must start with 88(8801*********)"
-                                                       type='text' maxlength="13" minlength="13" name='contact' size="30" required>
+                                                       placeholder="your mobile number"
+                                                       type='text' name='contact'>
                                             </div>
                                         </div>
-
 
                                         <div class="form-group">
-                                            <label for="yourCity">Your city : </label>
+                                            <label for="mobile">Your telephone number : </label>
                                             <div class="input-group">
-                                            <span class="input-group-addon"> <i
-                                                    class="glyphicon glyphicon-globe"></i></span>
+                                            <span class="input-group-addon"><i
+                                                        class="glyphicon glyphicon-phone"></i></span>
                                                 <div class="icon-addon">
-                                                    <select class="form-control" name="city">
-
-                                                        <option class="text-info">Dhaka</option>
-                                                        <option class="text-info">Chittagong</option>
-                                                        <option class="text-info">Rajshahi</option>
-                                                        <option class="text-info">Khulna</option>
-                                                        <option class="text-info">Barishal</option>
-                                                        <option class="text-info">Sylhet</option>
-
-                                                    </select>
+                                                    <input class="form-control"
+                                                           placeholder="your telephone number"
+                                                           type='text' name='telephone'>
                                                 </div>
                                             </div>
-                                        </div>
 
-                                        <div>
-                                            <p>Already have an account? <a href="login.php">Sign in</a> here</p>
-                                        </div>
+                                            <div class="form-group">
+                                                <label for="mobile">Your facebook id : </label>
+                                                <div class="input-group">
+                                            <span class="input-group-addon"><i
+                                                        class="glyphicon glyphicon-phone"></i></span>
+                                                    <div class="icon-addon">
+                                                        <input class="form-control"
+                                                               placeholder="your facebook id"
+                                                               type='text' name='facebookID'>
+                                                    </div>
+                                                </div>
 
-                                        <input class="btn btn-lg btn-success" type='submit' value="  Sign up ">
+                                                <div class="form-group">
+                                                    <label for="mobile">Your personal website : </label>
+                                                    <div class="input-group">
+                                            <span class="input-group-addon"><i
+                                                        class="glyphicon glyphicon-phone"></i></span>
+                                                        <div class="icon-addon">
+                                                            <input class="form-control"
+                                                                   placeholder="your personal website"
+                                                                   type='text' name='website'>
+                                                        </div>
+                                                    </div>
 
 
-                                    </div>
+                                            <div class="form-group">
+                                                <label for="mobile">Your Road No : </label>
+                                                <div class="input-group">
+                                            <span class="input-group-addon"><i
+                                                        class="glyphicon glyphicon-phone"></i></span>
+                                                    <div class="icon-addon">
+                                                        <input class="form-control"
+                                                               placeholder="your road no"
+                                                               type='text' name='roadNo'>
+                                                    </div>
+                                                </div>
+
+                                            <div class="form-group">
+                                                <label for="mobile">Your House No : </label>
+                                                <div class="input-group">
+                                            <span class="input-group-addon"><i
+                                                        class="glyphicon glyphicon-phone"></i></span>
+                                                    <div class="icon-addon">
+                                                        <input class="form-control"
+                                                               placeholder="your house no"
+                                                               type='text' name='houseNo'>
+                                                    </div>
+                                                </div>
+
+
+                                                    <div class="form-group">
+                                                        <label for="mobile">Your Flat No : </label>
+                                                        <div class="input-group">
+                                            <span class="input-group-addon"><i
+                                                        class="glyphicon glyphicon-phone"></i></span>
+                                                            <div class="icon-addon">
+                                                                <input class="form-control"
+                                                                       placeholder="your flat no"
+                                                                       type='text' name='flatNo'>
+                                                            </div>
+                                                        </div>
+
+
+                                                        <div class="form-group">
+                                                            <label for="mobile">Your Zip Code : </label>
+                                                            <div class="input-group">
+                                            <span class="input-group-addon"><i
+                                                        class="glyphicon glyphicon-phone"></i></span>
+                                                                <div class="icon-addon">
+                                                                    <input class="form-control"
+                                                                           placeholder="your zip code"
+                                                                           type='text' name='zipCode'>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="form-group">
+                                                                <label for="mobile">Your District : </label>
+                                                                <div class="input-group">
+                                            <span class="input-group-addon"><i
+                                                        class="glyphicon glyphicon-phone"></i></span>
+                                                                    <div class="icon-addon">
+                                                                        <input class="form-control"
+                                                                               placeholder="your district"
+                                                                               type='text' name='district'>
+                                                                    </div>
+                                                                </div>
+
+
+                                                                <div class="form-group">
+                                                                    <label for="mobile">Your post code : </label>
+                                                                    <div class="input-group">
+                                            <span class="input-group-addon"><i
+                                                        class="glyphicon glyphicon-phone"></i></span>
+                                                                        <div class="icon-addon">
+                                                                            <input class="form-control"
+                                                                                   placeholder="your post code"
+                                                                                   type='text' name='postCode'>
+                                                                        </div>
+                                                                    </div>
+
+
+                                                                    <div class="form-group">
+                                                                <label for="yourCity">Your city : </label>
+                                                                <div class="input-group">
+                                            <span class="input-group-addon"> <i
+                                                        class="glyphicon glyphicon-globe"></i></span>
+                                                                    <div class="icon-addon">
+                                                                        <select class="form-control" name="city">
+
+                                                                            <option class="text-info">Dhaka</option>
+                                                                            <option class="text-info">Chittagong
+                                                                            </option>
+                                                                            <option class="text-info">Rajshahi</option>
+                                                                            <option class="text-info">Khulna</option>
+                                                                            <option class="text-info">Barishal</option>
+                                                                            <option class="text-info">Sylhet</option>
+
+                                                                        </select>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+
+                                                            <div class="form-group">
+                                                                <label for="mobile">Upload your image : </label>
+                                                                <input type='file' name='userImage'>
+                                                            </div>
+
+
+                                                            <input class="btn btn-lg btn-success" type='submit'
+                                                                   value="  Sign up ">
+
+
+                                                        </div>
 
                                 </form>
                             </div>
@@ -245,7 +364,6 @@
 
 
 </div>
-
 
 
 <!--wow js script file-->

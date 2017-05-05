@@ -102,29 +102,7 @@ include "header.php";
                                     </div>
                                 </div>
 
-                                <h1 class="text-center">Users Info</h1>
-                                <?php
-                                $conn = oci_connect("system", "faisal4590", "localhost/faisal");
 
-                                $stid = oci_parse($conn, 'SELECT * FROM USERS');
-                                oci_execute($stid);
-
-                                echo "<table class='table table-responsive table-bordered' border='2' style='margin-bottom: 50px;'>\n";
-                                while ($row = oci_fetch_array($stid, OCI_ASSOC + OCI_RETURN_NULLS))
-                                {
-                                    echo "<tr style='color:#8a2be2; padding:15px;'>\n";
-                                    foreach ($row as $item)
-                                    {
-                                        echo "<td style='padding: 10px;'>" . $item . "</td>\n";
-                                    }
-                                    echo "</tr>\n";
-                                }
-                                echo "</table>\n";
-
-
-                                oci_close($conn);
-
-                                ?>
 
                                 <div class="form-group">
                                     <input class="btn btn-lg btn-danger" type='submit' value="Delete">
@@ -143,7 +121,29 @@ include "header.php";
 
     </div>
 
+    <h1 class="text-center">Users Info</h1>
+    <?php
+    $conn = oci_connect("system", "faisal4590", "localhost/faisal");
 
+    $stid = oci_parse($conn, 'SELECT * FROM USERS');
+    oci_execute($stid);
+
+    echo "<table class='table table-responsive table-bordered' border='2' style='margin-bottom: 50px;'>\n";
+    while ($row = oci_fetch_array($stid, OCI_ASSOC + OCI_RETURN_NULLS))
+    {
+        echo "<tr style='color:#8a2be2; padding:15px;'>\n";
+        foreach ($row as $item)
+        {
+            echo "<td style='padding: 10px;'>" . $item . "</td>\n";
+        }
+        echo "</tr>\n";
+    }
+    echo "</table>\n";
+
+
+    oci_close($conn);
+
+    ?>
 </body>
 </html>
 

@@ -1,5 +1,6 @@
 <?php
 require_once('connection/connection.php');
+session_start();
 ?>
 
 <!doctype html>
@@ -43,6 +44,7 @@ include('headerAdmin.php');
 <section class="background jumbotron" id="jumbotron">
     <?php include('includes/background.php'); ?>
 </section>
+
 
 
 <div class="containerForImageHover">

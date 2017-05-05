@@ -37,10 +37,12 @@ if (!empty($_POST))
         $msg .= '<p>Please fill up all the data</p>';
     }
 
-    $art_place             = htmlspecialchars($_POST['artPlace']);
+    $artistName             = htmlspecialchars($_POST['artistName']);
+    $artistDOB  = htmlspecialchars(date('d/m/y', strtotime($_POST['artistDOB'])));
     $artist_date_of_death  = htmlspecialchars(date('d/m/y', strtotime($_POST['artistDateOfDeath'])));
-    $art_value             = htmlspecialchars($_POST['artValue']);
-    $art_date_of_retrieval = htmlspecialchars(date('d/m/y', strtotime($_POST['dateOfRetrieval'])));
+    $artistCountry            = htmlspecialchars($_POST['artistCountry']);
+    $artistArtPlace            = htmlspecialchars($_POST['artistArtPlace']);
+
 
 
     if (empty($_FILES['artistImage']['name']))
@@ -71,14 +73,20 @@ if (!empty($_POST))
 
 
 
-    $stmt = "INSERT INTO ARTIST_VIEW
-        VALUES(:art_place,TO_DATE('" . $artist_date_of_death . "','DD/MM/YYYY'),
-        :worth_value,TO_DATE('" . $art_date_of_retrieval . "','DD/MM/YYYY'))";
+    $stmt = "INSERT INTO ARTIST
+    (ARTIST_NID, ARTIST_NAME, ARTIST_DOB, 
+     ARTIST_DOD, ARTIST_COUNTRY, ARTIST_ARTPLACE) 
+    VALUES (ARTIST_ARTIST_ID_SEQ.nextval,
+    :artistName,TO_DATE('" . $artistDOB . "','DD/MM/YYYY'),
+    TO_DATE('" . $artist_date_of_death . "','DD/MM/YYYY'),
+    :artistCountry,:artistArtPlace)";
 
     $stid = oci_parse($c1, $stmt);
 
-     oci_bind_by_name($stid, ':art_place', $art_place);
-     oci_bind_by_name($stid, ':worth_value', $art_value);
+     oci_bind_by_name($stid, ':artistName', $artistName);
+     oci_bind_by_name($stid, ':artistCountry', $artistCountry);
+    oci_bind_by_name($stid, ':artistArtPlace', $artistArtPlace);
+
 
 
     oci_execute($stid);

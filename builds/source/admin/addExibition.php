@@ -109,7 +109,7 @@ include "header.php";
                                                     class="fa fa-dollar"></i></span>
                                         <div class="icon-addon">
                                             <input class="form-control"
-                                                   placeholder="exibition date" required type='date'
+                                                   placeholder="exibition date" required type='text'
                                                    name='exibitionDate'>
                                         </div>
                                     </div>
@@ -121,7 +121,7 @@ include "header.php";
                                         <span class="input-group-addon"><i class="fa fa-eyedropper"></i></span>
                                         <div class="icon-addon">
                                             <input class="form-control" placeholder="exibition start time "
-                                                   type='datetime-local' required name='exibitionStartTime'>
+                                                   type='text' required name='exibitionStartTime'>
                                         </div>
                                     </div>
                                 </div>
@@ -132,7 +132,7 @@ include "header.php";
                                         <span class="input-group-addon"><i class="fa fa-eyedropper"></i></span>
                                         <div class="icon-addon">
                                             <input class="form-control" placeholder="exibition finishing time "
-                                                   type='datetime-local' required name='exibitionFinishingTime'>
+                                                   type='text' required name='exibitionFinishingTime'>
                                         </div>
                                     </div>
                                 </div>

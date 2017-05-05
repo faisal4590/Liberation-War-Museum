@@ -3,13 +3,36 @@
  * Created by PhpStorm.
  * User: faisal
  * Date: 3/29/2017
- * Time: 9:03 PM
+ * Time: 8:35 PM
  */
 ?>
 
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="css/style.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="font-awesome-4.6.3/css/font-awesome.css">
+
+</head>
+<body>
 <?php
-//$db = new mysqli("localhost", "matrixmp_admin", "33gUp;we~ep@", "matrixmp_cent_db") or die("Can't Connect to database");
-$db = oci_connect("system", "faisal4590", "localhost/faisal");
+include "headerAdmin.php";
+?>
+
+<?php
+
+
+
+$c1 = oci_connect("system", "faisal4590", 'localhost/faisal');
+
 if (!empty($_POST))
 {
     $msg = '';
@@ -39,114 +62,85 @@ if (!empty($_POST))
         $msg .= '<p>Phone number must be in 8801********* format.</p>';
     }
 
-    //ekhane check korbo username already exist kina.
-    //db theke select kore anteci username er sathe match kora row gula
-    //jodi > 0 row thake tar mane user ace...
-    $unm = htmlspecialchars($_POST['unm']);
-    //prepare statement starts here
-    /*$sql = 'select * from user where u_unm=?';
-    $statement = $db->prepare($sql);
-    $statement->bind_param('s',$unm);
-    $statement->execute();*/
-    //prepare statement ends here
-    
-    $stid = oci_parse($db, "select * from users where username='$unm'");
-    oci_execute($stid);
-    //$query  = "select * from user where u_unm='$unm'";
-
-    $result = oci_num_rows($stid);
-    if ($result > 0)
-    {
-        $msg .= "<p>Username already exists.</p>";
-    }
-
-    //same method e check korteci email already exist kina
-    $email  = htmlspecialchars($_POST['mail']);
-    $stid = oci_parse($db, "select * from users where USERS.EMAIL='$email'");
-    //$query  = "select * from user where USERS.EMAIL='$email'";
-    oci_execute($stid);
-    $result = oci_num_rows($stid);
-    if ($result > 0)
-    {
-        $msg .= "<p>Email already exists.</p>";
-    }
-
-    if (is_numeric($_POST['fnm']))
-    {
-        $msg .= "<p>Name must be in String Format...</p>";
-    }
-
-    if ($msg != "")
-    {
-        //header("location:register.php?error=" . $msg);
-    }
-    else
-    {
-        $fnm     = htmlspecialchars($_POST['fnm']);
-        $unm     = htmlspecialchars($_POST['unm']);
-        $pwd     = htmlspecialchars($_POST['pwd']);
-        $cpwd     = htmlspecialchars($_POST['cpwd']);
-        $gender  = htmlspecialchars($_POST['gender']);
-        $email   = htmlspecialchars($_POST['mail']);
-        $contact = htmlspecialchars($_POST['contact']);
-        $city    = htmlspecialchars($_POST['city']);
-
-        //prepare statement starts here
 
 
-        $stmt = 'INSERT INTO users
-        (USER_ID,USER_FULLNAME,PASSWORD,CONFIRM_PASSWORD,GENDER,
-        EMAIL,MOBILE_NUMBER,CITY) 
-        VALUES (:ID,:FUllNAME,:PASSWORD,:CONFPASSWORD,:GENDER,
-        :EMAIL,:MOBILE,:CITY)';
-        $stid    = oci_parse($db, $stmt);
+    $fnm     = htmlspecialchars($_POST['fnm']);
+    $unm     = htmlspecialchars($_POST['unm']);
+    $pwd     = htmlspecialchars($_POST['pwd']);
+    $cpwd     = htmlspecialchars($_POST['cpwd']);
+    $gender  = htmlspecialchars($_POST['gender']);
+    $email   = htmlspecialchars($_POST['mail']);
+    $contact = htmlspecialchars($_POST['contact']);
+    $telephone     = htmlspecialchars($_POST['telephone']);
+    $facebookID   = htmlspecialchars($_POST['facebookID']);
+    $website = htmlspecialchars($_POST['website']);
+
+    $roadNo = htmlspecialchars($_POST['roadNo']);
+    $houseNo    = htmlspecialchars($_POST['houseNo']);
+    $flatNo = htmlspecialchars($_POST['flatNo']);
+    $zipCode = htmlspecialchars($_POST['zipCode']);
+    $district = htmlspecialchars($_POST['district']);
+    $postCode= htmlspecialchars($_POST['postCode']);
+    $city    = htmlspecialchars($_POST['city']);
+
+    move_uploaded_file($_FILES['userImage']['tmp_name'], "admin/images/users_images/" .
+        $_FILES['userImage']['name']);
+
+    $userImage = $_FILES['userImage']['name'];
+
+/*        $stmt = 'INSERT INTO users
+        (USER_FULLNAME,USERNAME,PASSWORD,CONFIRM_PASSWORD,GENDER,
+       USER_IMAGES) 
+        VALUES (:FUllNAME,:USERNAME,:PASSsWORD,:CONFPASSWORD,:GENDER,
+        :USER_IMAGES)';*/
+
+    $stmt = 'INSERT INTO users(USER_FULLNAME,USERNAME,PASSWORD,
+        CONFIRM_PASSWORD,GENDER,ADDRESS,CONTACT,USER_IMAGES)
+        VALUES (:FUllNAME,:USERNAME,:PASSsWORD,:CONFPASSWORD,:GENDER,
+        ADDR(:road_no,:house_no,:flat_no,:zip_code,
+        :district,:post_code,:city),CONTACT_INFO(:mobile_no,
+        :phone_no,:facebook_id,:email_id,:personal_website),:USER_IMAGES)';
 
 
-        oci_bind_by_name($stid, ':ID', $fnm);
-        oci_bind_by_name($stid, ':FUllNAME', $unm);
-        oci_bind_by_name($stid, ':PASSWORD', $pwd);
+        $stid    = oci_parse($c1, $stmt);
+
+
+        oci_bind_by_name($stid, ':FUllNAME', $fnm);
+        oci_bind_by_name($stid, ':USERNAME', $unm);
+        oci_bind_by_name($stid, ':PASSsWORD', $pwd);
         oci_bind_by_name($stid, ':CONFPASSWORD', $cpwd);
         oci_bind_by_name($stid, ':GENDER', $gender);
-        oci_bind_by_name($stid, ':EMAIL', $email);
-        oci_bind_by_name($stid, ':MOBILE', $contact);
-        oci_bind_by_name($stid, ':CITY', $city);
 
+        oci_bind_by_name($stid, ':road_no', $roadNo);
+        oci_bind_by_name($stid, ':house_no', $houseNo);
+        oci_bind_by_name($stid, ':flat_no', $flatNo);
+        oci_bind_by_name($stid, ':zip_code', $zipCode);
+        oci_bind_by_name($stid, ':district', $district);
+        oci_bind_by_name($stid, ':post_code', $postCode);
+        oci_bind_by_name($stid, ':city', $city);
+
+
+        oci_bind_by_name($stid, ':email_id', $email);
+        oci_bind_by_name($stid, ':mobile_no', $contact);
+        oci_bind_by_name($stid, ':phone_no', $telephone);
+        oci_bind_by_name($stid, ':facebook_id', $facebookID);
+        oci_bind_by_name($stid, ':personal_website', $website);
+
+
+        oci_bind_by_name($stid, ':USER_IMAGES', $userImage);
 
         oci_execute($stid);
+        echo '<p class="text-center alert-success"
+        style="font-size: 20px;font-weight: bold;padding: 5px;">
+        You are successfully registered. <a href="login.php">click here to login.</a></p>';
 
 
-
-
-        //prepare statement ends here
-
-        /*$query="insert into user(u_fnm,u_unm,u_pwd,u_gender,u_email,u_contact,u_city)
-        values('$fnm','$unm','$pwd','$gender','$email','$contact','$city')";
-
-        $db->query($query) or die("Can't Execute Query...");*/
-        header("location:register.php?ok=1");
-    }
-}
-else
-{
-    //header("location:index.php");
-}
-$conn = oci_connect("system", "faisal4590", "localhost/faisal");
-$stid = oci_parse($conn, 'SELECT EMPLOYEE_NAME,EMPLOYEE_RELIGION,
-                EMPLOYEE_DOB, EMPLOYEE_SSC_GPA, EMPLOYEE_ROAD_NO, 
-                EMPLOYEE_CLASS, EMPLOYEE_FATHERS_NAME,EMPLOYEE_MOTHERS_NAME,
-                EMPLOYEE_WORKING_HOUR_STARTS,EMPLOYEE_IMAGE_NAME  FROM employee');
-
-
-
-oci_execute($stid);
-while (($row = oci_fetch_array($stid, OCI_ASSOC + OCI_RETURN_NULLS)) != false)
-{
-
-    $age = date('d.m.y') - $row['EMPLOYEE_DOB'] ;
 }
 
-echo "<pre>";
-print_r($age);
-echo "</pre>";
+
 
 ?>
+
+
+</body>
+</html>

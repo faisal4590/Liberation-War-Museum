@@ -108,7 +108,7 @@ include "header.php";
                                 $var1 = 0;
                                 while ($row = oci_fetch_array($stid, OCI_ASSOC + OCI_RETURN_NULLS))
                                 {
-                                    $temp[$var1++] = $row['DONOR_ID'];
+                                    $temp[$var1++] = $row['TICKET_NO'];
                                 }
                                 oci_close($conn);
                                 ?>

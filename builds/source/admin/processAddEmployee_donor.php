@@ -26,15 +26,15 @@ $donorID       = (int)htmlspecialchars($_POST['donorID']);
 
 
 $stmt = 'INSERT INTO EMPLOYEE_DONORS
-        (EMPLOYEE_ID,DONOR_ID)
-        VALUES(:EMPLOYEE_ID,:DONOR_ID)';
+        (EMPLOYEE_ID,TICKET_NO)
+        VALUES(:EMPLOYEE_ID,:TICKET_NO)';
 
 
 
 $stid = oci_parse($c1, $stmt);
 
 oci_bind_by_name($stid, ':EMPLOYEE_ID', $employeeID);
-oci_bind_by_name($stid, ':DONOR_ID', $donorID);
+oci_bind_by_name($stid, ':TICKET_NO', $donorID);
 
 
 oci_execute($stid);

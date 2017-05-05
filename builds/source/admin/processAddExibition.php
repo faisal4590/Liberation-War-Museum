@@ -41,11 +41,9 @@ if (!empty($_POST))
     $exibitionNo           = htmlspecialchars($_POST['exibitionNo']);
     $exibitionName          = htmlspecialchars($_POST['exibitionName']);
     $exibitionSponsors           = htmlspecialchars($_POST['exibitionSponsors']); 
-	$exibitionDate        = htmlspecialchars(date('m.d.y', strtotime($_POST['exibitionDate'])));
-	$exibitionStartTime           = htmlspecialchars(date('m.d.y H:i:s',
-                                                strtotime($_POST['exibitionStartTime'])));
-	$exibitionFinishingTime           =htmlspecialchars(date('m.d.y H:i:s',
-                                                    strtotime($_POST['exibitionFinishingTime'])));
+	$exibitionDate        = htmlspecialchars($_POST['exibitionDate']);
+	$exibitionStartTime           = htmlspecialchars($_POST['exibitionStartTime']);
+	$exibitionFinishingTime           =htmlspecialchars($_POST['exibitionFinishingTime']);
 	$exibitionType           = htmlspecialchars($_POST['exibitionType']);
 	$exibitionPrice           = htmlspecialchars($_POST['exibitionPrice']);
 
@@ -80,27 +78,31 @@ if (!empty($_POST))
 
 
 
-    $stmt = "INSERT INTO EXHIBITION                                           
+    $stmt = 'INSERT INTO EXHIBITION                                           
         (exibition_no,
         EXIBITION_NAME,
-  exibition_sponsors,
-  exibition_date,
-  exibition_start_time,
-  exibition_finishing_time,
-  exibition_type,
-  exibition_price
+          exibition_sponsors,
+          exibition_date,
+          exibition_start_time,
+          exibition_finishing_time,
+          exibition_type,
+          exibition_price
   ) 
         VALUES(:exibition_no,:EXIBITION_NAME,:exibition_sponsors,
-        TO_DATE('" . $exibitionDate . "','MM/DD/YYYY'),
-        to_date('" . $exibitionStartTime . "','mm/dd/yy HH24:MI:SS'),
-        TO_DATE('" . $exibitionFinishingTime . "','mm/dd/yy HH24:MI:SS'),
-        :exibition_type,:exibition_price)";
+        :exibitionDate,
+        :exibitionStartTime,
+       :exibitionEndTime,
+        :exibition_type,:exibition_price)';
 
     $stid = oci_parse($c1, $stmt);
 
     oci_bind_by_name($stid, ':exibition_no', $exibitionNo);
     oci_bind_by_name($stid, ':EXIBITION_NAME', $exibitionName);
     oci_bind_by_name($stid, ':exibition_sponsors', $exibitionSponsors);
+    oci_bind_by_name($stid, ':exibitionDate', $exibitionDate);
+    oci_bind_by_name($stid, ':exibitionStartTime', $exibitionStartTime);
+    oci_bind_by_name($stid, ':exibitionEndTime', $exibitionFinishingTime);
+
     oci_bind_by_name($stid, ':exibition_type', $exibitionType);
     oci_bind_by_name($stid, ':exibition_price', $exibitionPrice);
 

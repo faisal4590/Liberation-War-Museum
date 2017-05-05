@@ -51,7 +51,7 @@ include "headerAdmin.php";
                 <th scope="column" style="text-align: center;">Working Hour </th>
                 <th scope="column" style="text-align: center;">Blood Group</th>
                 <th scope="column" style="text-align: center;">Salary</th>
-                <th scope="column" style="text-align: center;">Image</th>
+                <!--<th scope="column" style="text-align: center;">Image</th>-->
             </tr>
             </thead>
             <tbody>
@@ -80,10 +80,10 @@ include "headerAdmin.php";
                     $workingHourStarts = date('H:i A', strtotime($row['EMPLOYEE_WORKING_HOUR_STARTS']));
                     $workingHourEnds = date('H:i A', strtotime($row['EMPLOYEE_WORKING_HOUR_ENDS']));
 
-                    var_dump($workingHourStarts);
+                  /*  var_dump($workingHourStarts);
                     var_dump($workingHourEnds);
                     var_dump($row['EMPLOYEE_WORKING_HOUR_STARTS']);
-                    var_dump($row['EMPLOYEE_WORKING_HOUR_ENDS']);
+                    var_dump($row['EMPLOYEE_WORKING_HOUR_ENDS']);*/
 
                     echo '<tr>';
 

@@ -28,9 +28,8 @@ if (!empty($_POST))
 {
 
     $userID            = (int) htmlspecialchars($_POST['userID']);
-    var_dump($userID);
-
-    $stmt = "TRUNCATE TABLE USERS WHERE USER_ID = '$userID'"  ;
+    $stmt = " DELETE FROM USERS
+              WHERE USER_ID = '$userID'"  ;
 
     $stid = oci_parse($c1, $stmt);
 

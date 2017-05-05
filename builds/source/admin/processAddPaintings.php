@@ -37,7 +37,7 @@ if (!empty($_POST))
         $msg .= '<p>Please fill up all the data</p>';
     }
 
-    $artID       = htmlspecialchars($_POST['artID']);
+    $artID       = (int) htmlspecialchars($_POST['ArtID']);
     $paintingID           = htmlspecialchars($_POST['paintingID']);
     $paintingType             =htmlspecialchars($_POST['paintingType']);
     $awardWon          =htmlspecialchars($_POST['awardWon']);
